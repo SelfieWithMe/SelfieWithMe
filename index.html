@@ -682,23 +682,21 @@
             $(document).on('click','#logoutBtn',function(e){
                 e.preventDefault();
                 logout();
+                alert("登出成功");
+                window.location = 'index.html' ;
 
             });
 
             function loginView(){
                 $('#logoutBtn').hide();
-                $('#indexView').hide();
                 $('#dashboardBtn').hide();
-                $('#loginView').show();
                 $('#loginBtn').show();
                 $('#fbPic').html('');
             }
 
             function indexView(){
-                $('#loginView').hide();
                 $('#loginBtn').hide();
                 $('#dashboardBtn').show();
-                $('#indexView').show();
                 $('#logoutBtn').show();
             }
 
@@ -708,7 +706,6 @@
                  // user is now logged out
                });
                loginView(); 
-               window.location = 'index.html' ;
             }
 
         </script>
