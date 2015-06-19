@@ -6,7 +6,7 @@
           <meta name="viewport" content="width=device-width">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-          <link rel="stylesheet" href="css/index.css">
+          <link rel="stylesheet" href="css/main.css">
           <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
           <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
@@ -24,9 +24,6 @@
                     <blockquote>
                         <form id="commentForm" class="form-horizontal">
                             <fieldset>
-                                <!-- Form Name -->
-                                <legend>Upload</legend>
-
                                 <!-- Practice 5 儲存圖片 -->
                                 <div class="form-group">
                                     <div class="col-md-4"><input type="file" id="fileInput" required></div>
@@ -34,17 +31,17 @@
 
                                 <!-- Text input-->
                                 <div class="form-group">
-                                      <label class="col-md-4 control-label" for="camera">TOOLS</label>  
+                                      <label id="formText" class="col-md-1 control-label" for="camera">TOOLS</label>  
                                       <div class="col-md-4">
-                                          <input id="camera" name="camera" type="text" placeholder="camera" class="form-control input-md" required="">
+                                          <input id="uploadForm" name="camera" type="text" placeholder="camera" class="form-control input-md" required="">
                                       </div>
                                 </div>
 
                                 <!-- Select Multiple -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="type">TYPE</label>
+                                <div  class="form-group">
+                                    <label id="formText" class="col-md-1 control-label" for="type">TYPE</label>
                                     <div class="col-md-4">
-                                        <select id="type" name="type" class="form-control" multiple="multiple">
+                                        <select id="uploadForm" name="type" class="form-control" multiple="multiple">
                                             <option value="1">心情</option>
                                             <option value="2">食物</option>
                                             <option value="3">旅遊</option>
@@ -56,10 +53,10 @@
                                 </div>
 
                                 <!-- Textarea -->
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="tips">TIPS</label>
+                                <div  class="form-group">
+                                    <label id="formText" class="col-md-1 control-label" for="tips">TIPS</label>
                                     <div class="col-md-4">                     
-                                       <textarea class="form-control" id="tips" name="tips">Tips</textarea>
+                                       <textarea class="form-control" id="uploadForm" name="tips">Tips</textarea>
                                     </div>
                                 </div>
 

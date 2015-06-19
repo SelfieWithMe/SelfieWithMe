@@ -436,3 +436,12 @@ footer .footer-below {
     height:250px;
 }
 }
+
+
+#uploadForm{
+    float: left;
+} 
+
+#formText{
+    text-align: left;
+}
