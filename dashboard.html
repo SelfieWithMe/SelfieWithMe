@@ -289,9 +289,10 @@
               fblogin();
             });
             $(document).on('click','#logoutBtn',function(e){
+              window.location = 'index.html' ;
               e.preventDefault();
               logout();
-              window.location = 'index.html' ;
+              
             });
 
             function loginView(){
