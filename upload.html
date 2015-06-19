@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+          <title>Upload</title>
+          <meta name="viewport" content="width=device-width">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+          <link rel="stylesheet" href="css/index.css">
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    </head>
+
+    <body>
+
+        <article>
+            <div  class="container">
+                <div class="row">
+                    <h2>上傳</h2>
+
+                    <!-- 這一部分要大家去 form builder 做 -->
+                    <!-- http://bootsnipp.com/forms?version=3 -->
+                    <blockquote>
+                        <form id="commentForm" class="form-horizontal">
+                            <fieldset>
+                                <!-- Form Name -->
+                                <legend>Upload</legend>
+
+                                <!-- Practice 5 儲存圖片 -->
+                                <div class="form-group">
+                                    <div class="col-md-4"><input type="file" id="fileInput" required></div>
+                                </div>
+
+                                <!-- Text input-->
+                                <div class="form-group">
+                                      <label class="col-md-4 control-label" for="camera">TOOLS</label>  
+                                      <div class="col-md-4">
+                                          <input id="camera" name="camera" type="text" placeholder="camera" class="form-control input-md" required="">
+                                      </div>
+                                </div>
+
+                                <!-- Select Multiple -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="type">TYPE</label>
+                                    <div class="col-md-4">
+                                        <select id="type" name="type" class="form-control" multiple="multiple">
+                                            <option value="1">Option one</option>
+                                            <option value="2">Option two</option>
+                                            <option value="3">Option three</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- Textarea -->
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="tips">TIPS</label>
+                                    <div class="col-md-4">                     
+                                       <textarea class="form-control" id="tips" name="tips">Tips</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                   <div class="col-md-4"><button id="commentSubmit" name="commentSubmit" class="btn btn-primary">送出</button></div>
+                                </div> 
+                             </fieldset>           
+                        </form>
+                    </blockquote>
+                </div>
+            </div>
+        </article>
+
+        <script>
+            Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP1T7rG4qOHiiOuAnokZB5jb");
+
+            if (!Parse.User.current()){
+              alert("你尚未登入");
+              window.location = "logIn.html";
+            }
+
+           
+
+            $(document).on('submit','#commentForm',function(eventObject){
+              eventObject.preventDefault();
+
+              var Comment = Parse.Object.extend("Comment") ;
+              var comment = new Comment();
+
+              comment.set("message",$("#comment").val());
+
+              // Practice 1 記錄發文的使用者
+              comment.set("message",$("#comment").val());
+              comment.set("writer",Parse.User.current());
+
+
+              // Practice 5 儲存圖片
+              if ($("#fileInput")[0].files.length > 0) {
+               var file = $("#fileInput")[0].files[0];
+               var name = "photo";
+               var parseImg = new Parse.File(name, file);
+               comment.set("img",parseImg);
+               parseImg.save({
+               success : function (savedImg){
+               alert(savedImg.url());
+               },
+               error : function (saveingImg , errorObject){
+               alert(errorObject.message) ;
+               }
+               });
+              }
+
+
+
+              comment.save({
+                success : function(savedParseObject){
+                  alert("留言成功");
+                  window.location.reload();
+                },
+                error : function (errorObject){
+                  console.log(errorObject);
+                  alert(errorObject.message);
+                }
+              });
+            });
+
+       </script>
+
+    </body>
+</html>
