@@ -6,7 +6,7 @@ Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP
 //FB key
 window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1070568829637766',
+      appId      : '376624765869068',
       xfbml      : true,
       version    : 'v2.3'
     });
@@ -16,7 +16,7 @@ window.fbAsyncInit = function() {
      var js, fjs = d.getElementsByTagName(s)[0];
      if (d.getElementById(id)) {return;}
      js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
