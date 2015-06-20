@@ -1,27 +1,3 @@
-            //step1:https://www.parse.com/docs/js/guide#users-facebook-users
-              // Initialize Parse
-              Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP1T7rG4qOHiiOuAnokZB5jb");
-
-
-              window.fbAsyncInit = function() {
-                  Parse.FacebookUtils.init({ // this line replaces FB.init({
-                      appId      : '376624765869068', // Facebook App ID
-                      status     : true,  // check Facebook Login status
-                      cookie     : true,  // enable cookies to allow Parse to access the session
-                      xfbml      : true,  // initialize Facebook social plugins on the page
-                      version    : 'v2.3' // point to the latest Facebook Graph API version
-                  });
-                  // Run code after the Facebook SDK is loaded.
-              };
-              
-              (function(d, s, id){
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) {return;}
-                  js = d.createElement(s); js.id = id;
-                  js.src = "http://connect.facebook.net/en_US/all.js";
-                  fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));
-
 
               function fblogin(){
                   //step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3 
@@ -54,7 +30,7 @@
                   });
               };
               
-     /*         $(document).ready(function(){
+              $(document).ready(function(){
                   console.log(Parse.User.current());
                   var Comment = Parse.Object.extend("Comment") ;
                   var queryComments = new Parse.Query (Comment) ;
@@ -72,7 +48,7 @@
                           alert(errorObject.message) ;
                       }
                   });
-              });*/
+              });
 
 
               $(document).ready(function(){
