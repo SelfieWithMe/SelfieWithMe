@@ -1,6 +1,8 @@
+            //step1:https://www.parse.com/docs/js/guide#users-facebook-users
+              // Initialize Parse
               Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP1T7rG4qOHiiOuAnokZB5jb");
 
-              function fblogin(){
+            function fblogin(){
                   //step2:https://developers.facebook.com/docs/graph-api/using-graph-api/v2.3 
                   Parse.FacebookUtils.logIn(null, {
                       success: function(user) {
