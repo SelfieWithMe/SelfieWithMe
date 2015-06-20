@@ -592,7 +592,7 @@
                   var js, fjs = d.getElementsByTagName(s)[0];
                   if (d.getElementById(id)) {return;}
                   js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js";
+                  js.src = "http://connect.facebook.net/en_US/all.js";
                   fjs.parentNode.insertBefore(js, fjs);
                   }(document, 'script', 'facebook-jssdk'));
 
@@ -626,9 +626,9 @@
                           alert("使用者取消登入或沒有授權");
                       }
                   });
-              }
+              };
               
-              $(document).ready(function(){
+     /*         $(document).ready(function(){
                   console.log(Parse.User.current());
                   var Comment = Parse.Object.extend("Comment") ;
                   var queryComments = new Parse.Query (Comment) ;
@@ -646,7 +646,7 @@
                           alert(errorObject.message) ;
                       }
                   });
-              });
+              });*/
 
 
               $(document).ready(function(){
