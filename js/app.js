@@ -5,9 +5,11 @@ Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP
 
 //FB key
 window.fbAsyncInit = function() {
-    FB.init({
+ Parse.FacebookUtils.init({
       appId      : '376624765869068',
-      xfbml      : true,
+      status     : true,  // check Facebook Login status
+      cookie     : true,  // enable cookies to allow Parse to access the session
+      xfbml      : true, 
       version    : 'v2.3'
     });
   };
@@ -51,7 +53,7 @@ window.fbAsyncInit = function() {
                   });
               };
               
-              $(document).ready(function(){
+/*              $(document).ready(function(){
                   console.log(Parse.User.current());
                   var Comment = Parse.Object.extend("Comment") ;
                   var queryComments = new Parse.Query (Comment) ;
@@ -69,7 +71,7 @@ window.fbAsyncInit = function() {
                           alert(errorObject.message) ;
                       }
                   });
-              });
+              }); */
 
 
               $(document).ready(function(){
