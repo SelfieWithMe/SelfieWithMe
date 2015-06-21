@@ -324,7 +324,7 @@
               photosava.save(null,{
                 success : function(savedParseObject){
                   alert("已經成功上傳!");
-                  window.location("index.html");
+                  window.location.reload();
                 },
                 error : function (errorObject){
                   console.log(errorObject);

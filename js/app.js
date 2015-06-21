@@ -46,6 +46,8 @@
                 else{
                     loginView();
                 }
+                GetPhoto();
+                
             });
 
             $(document).on('click','#loginBtn',function(e){
@@ -81,8 +83,6 @@
                });
                loginView(); 
             }
-
-
 
             function GetPhoto(){
 
