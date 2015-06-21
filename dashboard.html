@@ -310,6 +310,21 @@
               alert("你尚未登入");
               window.location = "index.html";
             }
+
+        $(document).ready(function(){
+            var currentname;
+            var current = Parse.User.current();
+                console.log(current);
+                if(current){
+                    FB.getLoginStatus(function(response) {
+                        if (response.status === 'connected') {
+                            FB.api('/me', function (response) {
+                                console.log(response);
+                                currentname = response['name'];
+                                          });             
+                              }});
+                });
+            }
            
             $(document).on('submit','#formSubmit',function(eventObject){
               eventObject.preventDefault();

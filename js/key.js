@@ -20,10 +20,3 @@ window.fbAsyncInit = function() {
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 
-      FB.getLoginStatus(function(response) {
-                            if (response.status === 'connected') {
-                                FB.api('/me', function (response) {
-                                    console.log(response);
-                                    var currentname = response['name'];
-                                          });             
-                              }});
