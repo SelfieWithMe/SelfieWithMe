@@ -62,9 +62,6 @@
                 window.location = 'index.html' ;
             });
 
-           var photomin=0,photomax=photomin+6;
-
-
             function loginView(){
                 $('#logoutBtn').hide();
                 $('#dashboardBtn').hide();
@@ -86,6 +83,8 @@
                loginView(); 
             }
 
+          var photomin=0,photomax=photomin+6,photolength;
+
             function GetPhoto(){
               var Photo = Parse.Object.extend("Photo") ;
               var photo = new Photo();
@@ -94,6 +93,7 @@
                   photoQuery.find({
                     success:function(photoArray){
                       console.log(photoArray);
+                      photolength=photoArray.length;
 
                       if(photomax>=photoArray.length){
                         photomax=photoArray.length;
@@ -125,14 +125,17 @@
              $('.portfolio-item .photo').eq(Photonum).css({'max-height':'360px','max-width':'360px'});
             };
             
-            $(document).on('click','#nextpage',function(e){
+              $(document).on('click','#nextpage',function(e){
                 e.preventDefault();
-              if(photomin<photoArray.length-6){
-                  photomin+=6;}
+                if(photomin<=photolength-6)
+                  photomin+=6;
+                  GetPhoto();
               });
 
             $(document).on('click','#lastpage',function(e){
                 e.preventDefault();
                   if(photomin>=6){
-                      photomin-=6;}
+                      photomin-=6;
+                      GetPhoto();
+                    }
                 });
