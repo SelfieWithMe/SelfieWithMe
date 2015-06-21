@@ -239,13 +239,13 @@
                                     <label id="formtype" class="col-md-1 control-label" for="type">TYPE</label>
                                     <div class="col-md-4">
                                         <select id="formstyle" name="type" class="form-control" multiple="multiple">
-                                            <option value="1">清新自然</option>
-                                            <option value="2">可愛甜美</option>
-                                            <option value="3">成熟都會</option>
-                                            <option value="4">搞怪扮醜</option>
-                                            <option value="5">活動節慶</option>
-                                            <option value="6">心情小語</option>
-                                            <option value="7">團體群拍</option>
+                                            <option value="清新自然">清新自然</option>
+                                            <option value="可愛甜美">可愛甜美</option>
+                                            <option value="成熟都會">成熟都會</option>
+                                            <option value="搞怪扮醜">搞怪扮醜</option>
+                                            <option value="活動節慶">活動節慶</option>
+                                            <option value="心情小語">心情小語</option>
+                                            <option value="團體群拍">團體群拍</option>
                                         </select>
                                     </div>
                                 </div>
@@ -302,7 +302,7 @@
               var photosava = new Photo();
 
               photosava.set("camera",$('#formcamera').val());
-              photosava.set("style",$('#formstyle').text());
+              photosava.set("style",$('#formstyle').val());
               photosava.set("tips",$('#formtips').val());
               photosava.set("writer",Parse.User.current());
 
