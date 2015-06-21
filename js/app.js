@@ -101,8 +101,8 @@
                         photos.get('tips'),
                         photos.get('writer'),
                         photos.get('img').url(),
-                        Photonum = i
-                        Photomax=photoArray.length;
+                        Photonum = i,
+                        Photomax=photoArray.length
                         );
                       }
                     }
