@@ -310,7 +310,7 @@
               alert("你尚未登入");
               window.location = "index.html";
             }
-
+        $(document).ready(function(){
             FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
                         FB.api('/me', function (response) {
@@ -318,6 +318,7 @@
                             var currentname = response['name'];
                                   });             
                       }});
+        };
            
             $(document).on('submit','#formSubmit',function(eventObject){
               eventObject.preventDefault();
