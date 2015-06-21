@@ -106,6 +106,7 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif,"微軟正黑體";
 }
 
 @media(min-width:768px) {
