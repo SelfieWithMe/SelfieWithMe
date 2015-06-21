@@ -100,7 +100,7 @@
                         photos.get('style'),
                         photos.get('tips'),
                         photos.get('writer'),
-                        photos.get('img'),
+                        photos.get('img').url(),
                         Photonum = i
                         );
                       }
@@ -113,7 +113,7 @@
              $('.portfolio-modal #app').eq(Photonum).text(camera);
              $('.portfolio-modal #style').eq(Photonum).text(style);
              $('.portfolio-modal .tip').eq(Photonum).text(tips);
-             $('.portfolio-modal .img').eq(Photonum).html('<img src='+img.url()+'class="img-responsive img-centered" alt="">');
-             $('.portfolio-item .img').eq(Photonum).html('<img src='+img.url()+'class="img-responsive img-centered" alt="">');
+             $('.portfolio-modal .img').eq(Photonum).html('<img src='+img+'class="img-responsive img-centered" alt="">');
+             $('.portfolio-item .img').eq(Photonum).html('<img src='+img+'class="img-responsive img-centered" alt="">');
 
             };
