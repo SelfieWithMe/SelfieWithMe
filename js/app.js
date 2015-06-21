@@ -92,8 +92,23 @@
                   photoQuery.find({
                     success:function(photoArray){
                       console.log(photoArray);
+                      var photomin=0,
+                          photomax=photoArray.length,
+                          photosperpage=6;
 
-                      for(var i=0; i<photoArray.length ; i++){
+                      $(document).on('click','#nextpage',function(e){
+                        e.preventDefault();
+                        if(photomin<photomax-photosperpage){
+                        photomin+=photosperpage;}
+                        });
+
+                      $(document).on('click','#nextpage',function(e){
+                        e.preventDefault();
+                        if(photomin>photosperpage){
+                        photomin-=photosperpage;}
+                        });
+
+                      for(var i=photomin; i<i+photosperpage; i++){
                         photos = photoArray[i];
                         addphoto(
                         photos.get('camera'),
@@ -102,7 +117,6 @@
                         photos.get('writer'),
                         photos.get('img').url(),
                         Photonum = i,
-                        Photomax=photoArray.length
                         );
                       }
                     }
@@ -110,22 +124,13 @@
             };
 
             function addphoto(camera,style,tips,writer,img,Photonum,Photomax){
-            var n=0;
-              $(document).on('click','#nextpage',function(e){
-                if(n<=Photomax-6){
-                n+=6;}
-              });
-
-              $(document).on('click','#lastpage',function(e){
-                if(n>=0){
-                n-=6;}
-              });
-             $('.portfolio-modal .writer').eq(Photonum+n).text(writer);
-             $('.portfolio-modal #app').eq(Photonum+n).text(camera);
-             $('.portfolio-modal #style').eq(Photonum+n).text(style);
-             $('.portfolio-modal .tip').eq(Photonum+n).text(tips);
-             $('.portfolio-modal .photo').eq(Photonum+n).attr("src",img);
-             $('.portfolio-item .photo').eq(Photonum+n).attr("src",img);
-             $('.portfolio-item .photo').eq(Photonum+n).css({'max-height':'360px','max-width':'360px'});
+           
+             $('.portfolio-modal .writer').eq(Photonum).text(writer);
+             $('.portfolio-modal #app').eq(Photonum).text(camera);
+             $('.portfolio-modal #style').eq(Photonum).text(style);
+             $('.portfolio-modal .tip').eq(Photonum).text(tips);
+             $('.portfolio-modal .photo').eq(Photonum).attr("src",img);
+             $('.portfolio-item .photo').eq(Photonum).attr("src",img);
+             $('.portfolio-item .photo').eq(Photonum).css({'max-height':'360px','max-width':'360px'});
             };
             
