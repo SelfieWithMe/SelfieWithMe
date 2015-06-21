@@ -129,7 +129,7 @@ window.fbAsyncInit = function() {
                   );
                 }
               }
-            })  
+            });  
 
 
             }
