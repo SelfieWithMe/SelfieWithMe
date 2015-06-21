@@ -113,26 +113,24 @@ window.fbAsyncInit = function() {
               var Photo = new Photo();
               var photoQuery = new Parse.Query(photo);
 
-            photoQuery.find({
-              success:function(photoArray){
-                console.log(photoArray);
+                  photoQuery.find({
+                    success:function(photoArray){
+                      console.log(photoArray);
 
-                for(var i=0; i<photoArray.length ; i++){
-                  photo = photoArray[i];
-                  addphoto(
-                  photo.get('camera');
-                  photo.get('style');
-                  photo.get('tips');
-                  photo.get('writer');
-                  photo.get('img');
-                  Photonum = i;
-                  );
-                }
-              }
-            });  
-
-
-            }
+                      for(var i=0; i<photoArray.length ; i++){
+                        photo = photoArray[i];
+                        addphoto(
+                        photo.get('camera');
+                        photo.get('style');
+                        photo.get('tips');
+                        photo.get('writer');
+                        photo.get('img');
+                        Photonum = i;
+                        );
+                      }
+                    }
+                  });  
+            };
 
             function addphoto(camera,style,tips,writer,img,Photonum){
              $('.portfolio-modal:eq(Photonum) .writer').text(writer);
