@@ -4768,7 +4768,7 @@ a.label:focus {
 }
 .label-default {
   background-color: #95a5a6;
-}
+}a
 .label-default[href]:hover,
 .label-default[href]:focus {
   background-color: #798d8f;
