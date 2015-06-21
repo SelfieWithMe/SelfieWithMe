@@ -109,9 +109,9 @@
             };
 
             function addphoto(camera,style,tips,writer,img,Photonum){
-             $('.portfolio-modal:eq(Photonum) .writer').text(writer);
-             $('.portfolio-modal:eq(Photonum) #app').text(camera);
-             $('.portfolio-modal:eq(Photonum) #style').text(style);
-             $('.portfolio-modal:eq(Photonum) .tip').text(tips);
-             $('.portfolio-modal:eq(Photonum) .img').html('<img src='+img+'class="img-responsive img-centered" alt="">');
+             $('.portfolio-modal .writer').eq(Photonum).text(writer);
+             $('.portfolio-modal #app').eq(Photonum).text(camera);
+             $('.portfolio-modal #style').eq(Photonum).text(style);
+             $('.portfolio-modal .tip').eq(Photonum).text(tips);
+             $('.portfolio-modal.img').eq(Photonum).html('<img src='+img+'class="img-responsive img-centered" alt="">');
             };
