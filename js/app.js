@@ -114,7 +114,7 @@
              $('.portfolio-modal #style').eq(Photonum).text(style);
              $('.portfolio-modal .tip').eq(Photonum).text(tips);
              $('.portfolio-modal .photo').eq(Photonum).attr("src",img);
-             $('.portfolio-item .photo').eq(Photonum).attr({src:img,height:"360px",width:"360px"});
+             $('.portfolio-item .photo').eq(Photonum).attr({src:img,max-height:"360px",max-width:"360px"});
             };
 
             
