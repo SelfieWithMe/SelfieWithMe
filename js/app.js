@@ -101,7 +101,7 @@
                         photomin+=6;}
                         });
 
-                      $(document).on('click','#nextpage',function(e){
+                      $(document).on('click','#lastpage',function(e){
                         e.preventDefault();
                         if(photomin>=6){
                         photomin-=6;}
