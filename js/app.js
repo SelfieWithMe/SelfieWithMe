@@ -86,7 +86,7 @@
 
             function GetPhoto(){
               var Photo = Parse.Object.extend("Photo") ;
-              var Photo = new Photo();
+              var photo = new Photo();
               var photoQuery = new Parse.Query(photo);
 
                   photoQuery.find({
@@ -94,13 +94,13 @@
                       console.log(photoArray);
 
                       for(var i=0; i<photoArray.length ; i++){
-                        photo = photoArray[i];
+                        photos = photoArray[i];
                         addphoto(
-                        photo.get('camera'),
-                        photo.get('style'),
-                        photo.get('tips'),
-                        photo.get('writer'),
-                        photo.get('img'),
+                        photos.get('camera'),
+                        photos.get('style'),
+                        photos.get('tips'),
+                        photos.get('writer'),
+                        photos.get('img'),
                         Photonum = i
                         );
                       }
