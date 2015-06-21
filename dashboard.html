@@ -295,27 +295,25 @@
             }
 
            
-            $(document).on('submit','#SubmitFormbutton',function(e){
-                alert("hi");
+            $(document).on('submit','#SubmitFormbutton',function(eventObject){
               eventObject.preventDefault();
 
               var Photo = Parse.Object.extend("Photo") ;
-              var photo = new Photo();
+              var photosava = new Photo();
 
-              photo.set("camera",$('#formcamera').val());
-              photo.set("style",$('#formstyle').val());
-              photo.set("tips",$('#formtips').val());
-              photo.set("writer",Parse.User.crrent());
+              photosava.set("camera",$('#formcamera').val());
+              photosava.set("style",$('#formstyle').val());
+              photosava.set("tips",$('#formtips').val());
+              photosava.set("writer",Parse.User.crrent());
 
 
               if ($("#fileInput")[0].files.length > 0) {
                var file = $("#fileInput")[0].files[0];
                var name = "photo";
                var parseImg = new Parse.File(name, file);
-               photo.set("img",parseImg);
+               photosava.set("img",parseImg);
                parseImg.save({
                success : function (savedImg){
-                alert(savedImg.url());
                },
                error : function (saveingImg , errorObject){
                alert(errorObject.message) ;
@@ -323,12 +321,12 @@
                });
               }
 
-              photo.save(null,{
-                success : function(photo){
+              photosava.save(null,{
+                success : function(savedParseObject){
                   alert("已經成功上傳!");
                   window.location("index.html");
                 },
-                error : function (photo,error){
+                error : function (errorObject){
                   console.log(errorObject);
                   alert(errorObject.message);
                 }
