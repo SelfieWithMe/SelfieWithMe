@@ -113,7 +113,7 @@
              $('.portfolio-modal #app').eq(Photonum).text(camera);
              $('.portfolio-modal #style').eq(Photonum).text(style);
              $('.portfolio-modal .tip').eq(Photonum).text(tips);
-             $('.portfolio-modal .photo').eq(Photonum).attr({src:img,height:360px,width:360px});
+             $('.portfolio-modal .photo').eq(Photonum).attr({src:img,height:"360",width:"360"});
              $('.portfolio-item .photo').eq(Photonum).attr("src",img);  
             };
 
