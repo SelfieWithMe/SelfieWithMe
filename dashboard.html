@@ -312,15 +312,15 @@
             }
 
            
-            $(document).on('submit','#formSubmit',function(eventObject){
+            $(document).on('submit','#formSubmit',function(e){
               eventObject.preventDefault();
 
               var Photo = Parse.Object.extend("Photo") ;
               var Photo = new Photo();
 
-              Photo.set("camera",$("#formcamera").val());
-              Photo.set("style",$("#formstyle").val());
-              Photo.set("tips",$("#formtips").val());
+              Photo.set("camera",$('#formcamera').val());
+              Photo.set("style",$('#formstyle').val());
+              Photo.set("tips",$('#formtips').val());
               Photo.set("writer",Parse.User.crrent());
 
 
