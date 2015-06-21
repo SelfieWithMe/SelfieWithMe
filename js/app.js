@@ -39,11 +39,6 @@ window.fbAsyncInit = function() {
                                   FB.api('/me/picture?type=large', function (response) {
                                       $('#fbPic').html("<img src="+response.data.url+" crossorigin=\"anonymous\" id=preview1 />");          
                                   });
-                             
-                                  FB.api('/me', function (response) {
-                                      console.log(response);
-                                      $('#fbImgView').append("<h1>Welcome , "+(response['gender']=="male"?"Mr. ":"Miss ")+" "+response['first_name']+"</h1>");
-                                  });            
                               }
                           }); 
                       },
@@ -108,3 +103,41 @@ window.fbAsyncInit = function() {
                });
                loginView(); 
             }
+
+
+
+            function GetPhoto(){
+
+              eventObject.preventDefault();
+              var Photo = Parse.Object.extend("Photo") ;
+              var Photo = new Photo();
+              var photoQuery = new Parse.Query(photo);
+
+            photoQuery.find({
+              success:function(photoArray){
+                console.log(photoArray);
+
+                for(var i=0; i<photoArray.length ; i++){
+                  photo = photoArray[i];
+                  addphoto(
+                  photo.get('camera');
+                  photo.get('style');
+                  photo.get('tips');
+                  photo.get('writer');
+                  photo.get('img');
+                  Photonum = i;
+                  );
+                }
+              }
+            })  
+
+
+            }
+
+            function addphoto(camera,style,tips,writer,img,Photonum){
+             $('.portfolio-modal:eq(Photonum) .writer').text(writer);
+             $('.portfolio-modal:eq(Photonum) #app').text(camera);
+             $('.portfolio-modal:eq(Photonum) #style').text(style);
+             $('.portfolio-modal:eq(Photonum) .tip').text(tips);
+             $('.portfolio-modal:eq(Photonum) .img').html('"<img src="+img+"class="img-responsive img-centered" alt="">"');
+            };

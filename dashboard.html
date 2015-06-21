@@ -310,6 +310,20 @@
               window.location = "index.html";
             }
 
+            FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        FB.api('/me', function (response) {
+                            console.log(response);
+                            var currentname = response['name'];
+                                  });            
+                              }
+                          }); 
+                      },
+                      error: function(user, error) {
+                          alert("使用者取消登入或沒有授權");
+                      }
+                  });
+              };
            
             $(document).on('submit','#formSubmit',function(eventObject){
               eventObject.preventDefault();
@@ -320,8 +334,7 @@
               Photo.set("camera",$("#formcamera").val());
               Photo.set("style",$("#formstyle").val());
               Photo.set("tips",$("#formtips").val());
-
-              Photo.set("writer",Parse.User.current());
+              Photo.set("writer",currentname);
 
 
               if ($("#fileInput")[0].files.length > 0) {
