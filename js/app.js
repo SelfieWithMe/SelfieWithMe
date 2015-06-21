@@ -47,7 +47,7 @@
                     loginView();
                 }
                 GetPhoto();
-                
+
             });
 
             $(document).on('click','#loginBtn',function(e){
@@ -85,8 +85,6 @@
             }
 
             function GetPhoto(){
-
-              eventObject.preventDefault();
               var Photo = Parse.Object.extend("Photo") ;
               var Photo = new Photo();
               var photoQuery = new Parse.Query(photo);
