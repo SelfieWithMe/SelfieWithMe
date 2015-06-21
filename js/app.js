@@ -60,8 +60,10 @@
                 logout();
                 alert("登出成功");
                 window.location = 'index.html' ;
-
             });
+
+           var photomin=0,photomax=photomin+6;
+
 
             function loginView(){
                 $('#logoutBtn').hide();
@@ -92,20 +94,6 @@
                   photoQuery.find({
                     success:function(photoArray){
                       console.log(photoArray);
-                      var photomin=0,
-                          photomax=photomin+6;
-
-                      $(document).on('click','#nextpage',function(e){
-                        e.preventDefault();
-                        if(photomin<photoArray.length-6){
-                        photomin+=6;}
-                        });
-
-                      $(document).on('click','#lastpage',function(e){
-                        e.preventDefault();
-                        if(photomin>=6){
-                        photomin-=6;}
-                        });
 
                       if(photomax>=photoArray.length){
                         photomax=photoArray.length;
@@ -137,3 +125,14 @@
              $('.portfolio-item .photo').eq(Photonum).css({'max-height':'360px','max-width':'360px'});
             };
             
+            $(document).on('click','#nextpage',function(e){
+                e.preventDefault();
+              if(photomin<photoArray.length-6){
+                  photomin+=6;}
+              });
+
+            $(document).on('click','#lastpage',function(e){
+                e.preventDefault();
+                  if(photomin>=6){
+                      photomin-=6;}
+                });
