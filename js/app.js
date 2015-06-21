@@ -53,27 +53,6 @@ window.fbAsyncInit = function() {
                   });
               };
               
-/*              $(document).ready(function(){
-                  console.log(Parse.User.current());
-                  var Comment = Parse.Object.extend("Comment") ;
-                  var queryComments = new Parse.Query (Comment) ;
-
-                  queryComments.find({
-                      success : function(arrayOfQueriedObjects){
-                          console.log (arrayOfQueriedObjects);
-            
-                          for (var i = 0 ; i < arrayOfQueriedObjects.length ; i++){
-                              comment = arrayOfQueriedObjects[i] ;
-                              $("#comments").append("<blockquote>"+"<img src='"+ comment.get("img").url()+"' height='100px'>"+ "</blockquote>");
-                          }
-                      },
-                      error : function(errorObject){
-                          alert(errorObject.message) ;
-                      }
-                  });
-              }); */
-
-
               $(document).ready(function(){
                 var current = Parse.User.current();
                 console.log(current);
