@@ -120,12 +120,12 @@ window.fbAsyncInit = function() {
                       for(var i=0; i<photoArray.length ; i++){
                         photo = photoArray[i];
                         addphoto(
-                        photo.get('camera');
-                        photo.get('style');
-                        photo.get('tips');
-                        photo.get('writer');
-                        photo.get('img');
-                        Photonum = i;
+                        photo.get('camera'),
+                        photo.get('style'),
+                        photo.get('tips'),
+                        photo.get('writer',
+                        photo.get('img'),
+                        Photonum = i
                         );
                       }
                     }
