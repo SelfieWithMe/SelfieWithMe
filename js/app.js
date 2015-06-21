@@ -116,7 +116,7 @@
                         photos.get('tips'),
                         photos.get('writer'),
                         photos.get('img').url(),
-                        Photonum = i,
+                        Photonum = i
                         );
                       }
                     }
