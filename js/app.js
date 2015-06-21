@@ -119,14 +119,14 @@
                         photos.get('tips'),
                         photos.get('writer'),
                         photos.get('img').url(),
-                        Photonum = i
+                        Photonum = i%6
                         );
                       }
                     }
                   });  
             };
 
-            function addphoto(camera,style,tips,writer,img,Photonum,Photomax){
+            function addphoto(camera,style,tips,writer,img,Photonum){
            
              $('.portfolio-modal .writer').eq(Photonum).text(writer);
              $('.portfolio-modal #app').eq(Photonum).text(camera);
