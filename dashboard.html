@@ -12,11 +12,25 @@
           <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
           <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-          <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
-    </head>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+
+        <!-- Plugin JavaScript -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/cbpAnimatedHeader.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+
+        <script src="js/main.js"></script>    
+        <script src="js/app.js"></script>    
+      </head>
 
 
     <body id="page-top" class="index">
@@ -230,17 +244,17 @@
 
                                 <!-- Text input-->
                                 <div class="form-group">
-                                      <label id="formText" class="col-md-1 control-label" for="camera">TOOLS</label>  
+                                      <label id="formtools" class="col-md-1 control-label" for="camera">拍攝器材/APP</label>  
                                       <div class="col-md-4">
-                                          <input id="uploadForm" name="camera" type="text" placeholder="camera" class="form-control input-md" required="">
+                                          <input id="formcamera" name="camera" type="text" placeholder="camera" class="form-control input-md" required="">
                                       </div>
                                 </div>
 
                                 <!-- Select Multiple -->
                                 <div  class="form-group">
-                                    <label id="formText" class="col-md-1 control-label" for="type">TYPE</label>
+                                    <label id="formtype" class="col-md-1 control-label" for="type">TYPE</label>
                                     <div class="col-md-4">
-                                        <select id="uploadForm" name="type" class="form-control" multiple="multiple">
+                                        <select id="formstyle" name="type" class="form-control" multiple="multiple">
                                             <option value="1">清新自然</option>
                                             <option value="2">可愛甜美</option>
                                             <option value="3">成熟都會</option>
@@ -254,9 +268,9 @@
 
                                 <!-- Textarea -->
                                 <div  class="form-group">
-                                    <label id="formText" class="col-md-1 control-label" for="tips">TIPS</label>
+                                    <label id="formText" class="col-md-1 control-label" for="tips">拍攝角度/拍攝訣竅</label>
                                     <div class="col-md-4">                     
-                                       <textarea class="form-control" id="uploadForm" name="tips">Tips</textarea>
+                                       <textarea class="form-control" id="formtips" name="tips">Tips</textarea>
                                     </div>
                                 </div>
 
@@ -290,119 +304,53 @@
                 </div>
             </div>
         </footer>
-
-
-
-        <script>
-          //step1:https://www.parse.com/docs/js/guide#users-facebook-users
-              // Initialize Parse
-              Parse.initialize("3Ct29PJCet8L8kfhLvbLTJ3DLKRC61RAp7ysXFU6", "3yHxjy4EBgJTMWYBuP1T7rG4qOHiiOuAnokZB5jb");
-
-
-              window.fbAsyncInit = function() {
-                  Parse.FacebookUtils.init({ // this line replaces FB.init({
-                      appId      : '1070568829637766', // Facebook App ID
-                      status     : true,  // check Facebook Login status
-                      cookie     : true,  // enable cookies to allow Parse to access the session
-                      xfbml      : true,  // initialize Facebook social plugins on the page
-                      version    : 'v2.3' // point to the latest Facebook Graph API version
-                  });
-                  // Run code after the Facebook SDK is loaded.
-              };
-              (function(d, s, id){
-                  var js, fjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) {return;}
-                  js = d.createElement(s); js.id = id;
-                  js.src = "//connect.facebook.net/en_US/sdk.js";
-                  fjs.parentNode.insertBefore(js, fjs);
-                  }(document, 'script', 'facebook-jssdk'));
-
-
-          if (!Parse.User.current()){
-            alert("你尚未登入");
-            window.location = "index.html";
-          }
-
-          $(document).ready(function(){
-              var current = Parse.User.current();
-              console.log(current);
-              if(current){
-                  var a = setTimeout(function(){
-                  FB.getLoginStatus(function(response) {
-                      if (response.status === 'connected') {
-                          uid = response.authResponse.userID;
-                          accessToken = response.authResponse.accessToken;
-                          FB.api('/me/picture?type=large', function (response) {
-                             $('#fbImgView').html("<img src="+response.data.url+" crossorigin=\"anonymous\" id=dashboardImg />");          
-                             });
-                     
-                          FB.api('/me', function (response) {
-                              console.log(response);
-                              $('#fbImgView').append("<h1>HELLO , "+" "+response['first_name']+"</h1>");
-                          });
-                      }
-                     });   
-                  },3000);
-                indexView();
-              }
-              else{
-                loginView();
-              }
-            });
-
-            $(document).on('click','#fbloginBtn',function(e){
-              e.preventDefault();
-              fblogin();
-            });
-            $(document).on('click','#logoutBtn',function(e){
-              e.preventDefault();
-              logout();
-              alert("登出成功");
-              window.location = 'index.html' ;
-            });
-
-            function loginView(){
-              $('#logoutBtn').hide();
-              $('#indexView').hide();
-              
-              $('#loginView').show();
-              $('.notLogin').show();
-              $('#fbImgView').html('');
-              
-            }
-
-            function indexView(){
-              $('#loginView').hide();
-              $('.notLogin').hide();
-              
-              $('#indexView').show();
-              $('#logoutBtn').show();
-            }
-
-            function logout(){
-               Parse.User.logOut();
-               FB.logout(function(response) {
-                 // user is now logged out
-               });
-               loginView();        
-            }
-
-        </script>
-
-
-            <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-
-        <!-- Plugin JavaScript -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-        <script src="js/classie.js"></script>
-        <script src="js/cbpAnimatedHeader.js"></script>
-
-        <!-- Custom Theme JavaScript -->
-        <script src="js/main.js"></script>
-
     </body>
+
+    <script>
+            if (!Parse.User.current()){
+              alert("你尚未登入");
+              window.location = "logIn.html";
+            }
+
+           
+            $(document).on('submit','#commentForm',function(eventObject){
+              eventObject.preventDefault();
+
+              var Photo = Parse.Object.extend("Photo") ;
+              var Photo = new Photo();
+
+              Photo.set("camera",$("#formcamera").val());
+              Photo.set("style",$("#formstyle").val());
+              Photo.set("tips",$("#formtips").val());
+
+              Photo.set("writer",Parse.User.current());
+
+
+              if ($("#fileInput")[0].files.length > 0) {
+               var file = $("#fileInput")[0].files[0];
+               var name = "photo";
+               var parseImg = new Parse.File(name, file);
+               Photo.set("img",parseImg);
+               parseImg.save({
+               success : function (savedImg){
+               alert("已經成功上傳!");
+               },
+               error : function (saveingImg , errorObject){
+               alert(errorObject.message) ;
+               }
+               });
+              }
+
+              Photo.save({
+                success : function(savedParseObject){
+                  window.location("index.html");
+                },
+                error : function (errorObject){
+                  console.log(errorObject);
+                  alert(errorObject.message);
+                }
+              });
+            });
+
+       </script>
 </html>

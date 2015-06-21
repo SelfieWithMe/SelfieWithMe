@@ -102,15 +102,13 @@
                comment.set("img",parseImg);
                parseImg.save({
                success : function (savedImg){
-               alert(savedImg.url());
+               alert("已經成功上傳!");
                },
                error : function (saveingImg , errorObject){
                alert(errorObject.message) ;
                }
                });
               }
-
-
 
               comment.save({
                 success : function(savedParseObject){
