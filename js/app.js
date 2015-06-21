@@ -112,12 +112,12 @@
             function addphoto(camera,style,tips,writer,img,Photonum,Photomax){
             var n=0;
               $(document).on('click','#nextpage',function(e){
-                if(n<===Photomax-6){
+                if(n<=Photomax-6){
                 n+=6;}
               });
 
               $(document).on('click','#lastpage',function(e){
-                if(n>===0){
+                if(n>=0){
                 n-=6;}
               });
              $('.portfolio-modal .writer').eq(Photonum+n).text(writer);
