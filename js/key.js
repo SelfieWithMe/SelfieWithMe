@@ -19,18 +19,3 @@ window.fbAsyncInit = function() {
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
-$(document).ready(function(){
-            var currentname;
-            var current = Parse.User.current();
-                console.log(current);
-                if(current){
-                    FB.getLoginStatus(function(response) {
-                        if (response.status === 'connected') {
-                            FB.api('/me', function (response) {
-                                console.log(response);
-                                currentname = response['name'];
-                                          });             
-                              }});
-                };
-            });
