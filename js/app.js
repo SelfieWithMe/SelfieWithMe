@@ -93,22 +93,25 @@
                     success:function(photoArray){
                       console.log(photoArray);
                       var photomin=0,
-                          photomax=photoArray.length,
-                          photosperpage=6;
+                          photomax=photomin+6;
 
                       $(document).on('click','#nextpage',function(e){
                         e.preventDefault();
-                        if(photomin<photomax-photosperpage){
-                        photomin+=photosperpage;}
+                        if(photomin<photoArray.length-6){
+                        photomin+=6;}
                         });
 
                       $(document).on('click','#nextpage',function(e){
                         e.preventDefault();
-                        if(photomin>photosperpage){
-                        photomin-=photosperpage;}
+                        if(photomin>=6){
+                        photomin-=6;}
                         });
 
-                      for(var i=photomin; i<i+photosperpage; i++){
+                      if(photomax>=photoArray.length){
+                        photomax=photoArray.length;
+                      }
+
+                      for(var i=photomin; i<photomax; i++){
                         photos = photoArray[i];
                         addphoto(
                         photos.get('camera'),
