@@ -343,7 +343,7 @@
 
               Photo.save({
                 success : function(savedParseObject){
-                  window.location("index.html");
+                  window.location.reload();
                 },
                 error : function (errorObject){
                   console.log(errorObject);
