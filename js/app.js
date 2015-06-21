@@ -87,7 +87,7 @@
             function GetPhoto(){
               var Photo = Parse.Object.extend("Photo") ;
               var photo = new Photo();
-              var photoQuery = new Parse.Query(photo);
+              var photoQuery = new Parse.Query(Photo);
 
                   photoQuery.find({
                     success:function(photoArray){
