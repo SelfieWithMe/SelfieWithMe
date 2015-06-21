@@ -235,7 +235,7 @@
                     <!-- 這一部分要大家去 form builder 做 -->
                     <!-- http://bootsnipp.com/forms?version=3 -->
                     <blockquote>
-                        <form id="commentForm" class="form-horizontal">
+                        <form id="photoForm" class="form-horizontal">
                             <fieldset>
                                 <!-- Practice 5 儲存圖片 -->
                                 <div class="form-group">
@@ -275,11 +275,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                   <div class="col-md-4"><button id="commentSubmit" name="commentSubmit" class="btn btn-primary">送出</button></div>
+                                   <div class="col-md-4"><button id="formSubmit" name="photoSubmit" class="btn btn-primary">送出</button></div>
                                 </div> 
                              </fieldset>           
                         </form>
                     </blockquote>
+
                 </div>
             </div>
         </div>
@@ -304,16 +305,14 @@
                 </div>
             </div>
         </footer>
-    </body>
-
     <script>
             if (!Parse.User.current()){
               alert("你尚未登入");
-              window.location = "logIn.html";
+              window.location = "index.html";
             }
 
            
-            $(document).on('submit','#commentForm',function(eventObject){
+            $(document).on('submit','#formSubmit',function(eventObject){
               eventObject.preventDefault();
 
               var Photo = Parse.Object.extend("Photo") ;
@@ -353,4 +352,6 @@
             });
 
        </script>
+    </body>
+
 </html>
