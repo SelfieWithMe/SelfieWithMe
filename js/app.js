@@ -123,7 +123,7 @@ window.fbAsyncInit = function() {
                         photo.get('camera'),
                         photo.get('style'),
                         photo.get('tips'),
-                        photo.get('writer',
+                        photo.get('writer'),
                         photo.get('img'),
                         Photonum = i
                         );
