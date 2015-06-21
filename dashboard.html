@@ -316,14 +316,11 @@
                             console.log(response);
                             var currentname = response['name'];
                                   });            
-                              }
-                          }); 
                       },
                       error: function(user, error) {
                           alert("使用者取消登入或沒有授權");
                       }
                   });
-              };
            
             $(document).on('submit','#formSubmit',function(eventObject){
               eventObject.preventDefault();
