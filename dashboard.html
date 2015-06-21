@@ -295,24 +295,24 @@
             }
 
            
-            $('#SubmitFormbutton').on('submit',function(e){
+            $(document).on('submit','#SubmitFormbutton',function(e){
                 alert("hi");
               eventObject.preventDefault();
 
               var Photo = Parse.Object.extend("Photo") ;
-              var Photo = new Photo();
+              var photo = new Photo();
 
-              Photo.set("camera",$('#formcamera').val());
-              Photo.set("style",$('#formstyle').val());
-              Photo.set("tips",$('#formtips').val());
-              Photo.set("writer",Parse.User.crrent());
+              photo.set("camera",$('#formcamera').val());
+              photo.set("style",$('#formstyle').val());
+              photo.set("tips",$('#formtips').val());
+              photo.set("writer",Parse.User.crrent());
 
 
               if ($("#fileInput")[0].files.length > 0) {
                var file = $("#fileInput")[0].files[0];
                var name = "photo";
                var parseImg = new Parse.File(name, file);
-               Photo.set("img",parseImg);
+               photo.set("img",parseImg);
                parseImg.save({
                success : function (savedImg){
                 alert(savedImg.url());
@@ -323,12 +323,12 @@
                });
               }
 
-              Photo.save(null,{
-                success : function(Photo){
+              photo.save(null,{
+                success : function(photo){
                   alert("已經成功上傳!");
                   window.location("index.html");
                 },
-                error : function (Photo,error){
+                error : function (photo,error){
                   console.log(errorObject);
                   alert(errorObject.message);
                 }
