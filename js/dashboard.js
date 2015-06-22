@@ -4,7 +4,7 @@ $(document).ready(function(){
               alert("你尚未登入");
               window.location = "index.html";
             }else if(Parse.User.current()){
-                var a = setTimeout(function(){
+                var a = setTimeout(function(){ 
                   FB.getLoginStatus(function(response) {
                     if (response.status === 'connected') {
                         uid = response.authResponse.userID;
@@ -12,7 +12,7 @@ $(document).ready(function(){
                         FB.api('/me', function (response) {
                         writer=response['name'];
                                  });
-                    }})})}
+                    }})},3000)}
               Setalbum();});
 
            
