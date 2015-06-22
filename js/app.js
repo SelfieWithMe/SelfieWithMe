@@ -87,6 +87,8 @@
                       $(document).on('click','#hit',function(e){
                           e.preventDefault();
                           GetPhoto();
+                         $('.picNav li').removeClass("active");
+                         $('#hit').parents().addClass("active");
                           console.log("APPLE");
                         });
                       $(document).on('click','#latest',function(e){
@@ -94,7 +96,7 @@
                          change="latest";
                          GetPhoto();
                          $('.picNav li').removeClass("active");
-                         $('#natural').parents().addClass("active");
+                         $('#latest').parents().addClass("active");
                          console.log("APPLE");
                       });
                       $(document).on('click','#natural',function(e){
