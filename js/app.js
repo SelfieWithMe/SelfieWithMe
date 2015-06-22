@@ -83,7 +83,7 @@
             }
 
             function Setalbum(){
-              var photomin=0,photomax=photomin+6,page=0;
+              var photomin=0,photomax=6,page=0;
 
                   function GetPhoto(photomin,photomax){
                     var Photo = Parse.Object.extend("Photo") ;
@@ -93,13 +93,11 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-                            var length=photoArray.length;
                             if(photomin<6){
                               photomin=0;
                             }
-                            
+
                             console.log(photomax);
-                            console.log(length);
 
                         for(var i=photomin; i<photomax; i++){
                             if(i==photoArray.length-1){
@@ -132,7 +130,7 @@
           
               function setphoto(page){
                   photomin=photomin+page;
-                  photomax=photomin+6;
+                  photomax=photomax+page;
 
                   GetPhoto(photomin,photomax);
                    };
