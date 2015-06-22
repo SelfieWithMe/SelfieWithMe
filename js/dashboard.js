@@ -60,7 +60,7 @@ var writer;
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
-                      photoQuery.equalTo("writer",Parse.User.current());
+                      photoQuery.equalTo("owner",Parse.User.current());
 
                         photoQuery.find({
                           success:function(photoArray){
