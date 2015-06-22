@@ -221,8 +221,7 @@
                    };
 
                function addphoto(camera,style,tips,writer,img,objectId,value,photonum){
-                var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum,
-                a=setTimeout(function(){
+                var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
                  $(modalname).find('#style').text(style);
@@ -234,7 +233,6 @@
                  $(itemname).show()
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
-                },3000) 
                };
 
                function removephoto(){
