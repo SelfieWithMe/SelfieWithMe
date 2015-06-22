@@ -453,10 +453,18 @@
               var Photo = Parse.Object.extend("Photo") ;
               var photosava = new Photo();
 
+              FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                uid = response.authResponse.userID;
+                    accessToken = response.authResponse.accessToken;
+                    FB.api('/me', function (response) {
+                    photosava.set("writer",response['name']);
+                                });
+                         }
+
               photosava.set("camera",$('#formcamera').val());
               photosava.set("style",$('#formstyle').val());
               photosava.set("tips",$('#formtips').val());
-              photosava.set("writer",Parse.User.current());
 
 
               if ($("#fileInput")[0].files.length > 0) {
