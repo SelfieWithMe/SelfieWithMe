@@ -139,11 +139,13 @@
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
+                     
                      if(change!=null || change!="latest"){
                       photoQuery.equalTo("style",change);
-                     }else if(change==="latest"){
+                     }else if(change=="latest"){
                       photoQuery.descending("createdAt");
                      }
+
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
