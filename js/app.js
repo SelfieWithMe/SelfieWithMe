@@ -94,6 +94,7 @@
                           success:function(photoArray){
                             console.log(photoArray);
                         for(var i=photomin; i<photomax; i++){
+                            photos=photoArray[i];
                             addphoto(
                             photos.get('camera'),
                             photos.get('style'),
@@ -141,6 +142,5 @@
                  console.log(photonum);
                }
                  
-                 GetPhoto();
                  setphoto(page); 
         };
