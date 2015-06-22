@@ -132,13 +132,13 @@
 
                 function addphoto(camera,style,tips,writer,img,photonum){
                   var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
-                 $(modalname).children('.writer').text(writer);
-                 $(modalname).children('#app').text(camera);
-                 $(modalname).children('#style').text(style);
-                 $(modalname).children('.tip').text(tips);
-                 $(modalname).children('.photo').attr("src",img);
-                 $(itemname).children('.photo').attr("src",img);
-                 $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});
+                 $(modalname).find('.writer').text(writer);
+                 $(modalname).find('#app').text(camera);
+                 $(modalname).find('#style').text(style);
+                 $(modalname).find('.tip').text(tips);
+                 $(modalname).find('.photo').attr("src",img);
+                 $(itemname).find('.photo').attr("src",img);
+                 $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                  console.log(photonum);
                }
                  
