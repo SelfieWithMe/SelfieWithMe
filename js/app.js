@@ -195,6 +195,7 @@
                             photos.get('objectId'),
                             photonum=i%6+1
                             )
+                            console.log('objectid')
                           }
                           removephoto();
                         }
