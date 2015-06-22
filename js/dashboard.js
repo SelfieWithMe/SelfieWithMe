@@ -13,7 +13,7 @@ $(document).ready(function(){
                         writer=response['name'];
                                  });
                     }})})}
-              Setalbum();})
+              Setalbum();});
 
            
             $(document).on('submit','#photoForm',function(eventObject){
