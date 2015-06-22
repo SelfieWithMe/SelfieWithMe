@@ -93,14 +93,15 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-
+                            var length=photoArray.length;
                             if(photomin<6){
                               photomin=0;
-                            }else if(photomax>photoArray.length){
-                             photomax=photoArray.length;
+                            }else if(photomax>=length){
+                             photomax=length;
                            }
                             console.log(photomax);
-                            console.log(photoArray.length);
+                            console.log(length);
+
                         for(var i=photomin; i<photomax; i++){
                             photos=photoArray[i];
                             addphoto(
