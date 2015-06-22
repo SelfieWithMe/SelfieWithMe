@@ -441,6 +441,8 @@
         </footer>
     <script>
             var writer;
+
+            function FBuser(){
             FB.getLoginStatus(function(response) {
                 if (response.status === 'connected') {
                 uid = response.authResponse.userID;
@@ -449,6 +451,7 @@
                     writer=response['name'];
                                 });
                 }});
+            }   
 
             if (!Parse.User.current()){
               alert("你尚未登入");
@@ -496,6 +499,7 @@
 
             $(document).ready(function(){
                 Setalbum();
+                FBuser();
             });
 
          function Setalbum(){
