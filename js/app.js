@@ -109,12 +109,14 @@
               
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
-                  setphoto(6);
+                  page+=6;
+                  setphoto();
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
-                    setphoto(-6);
+                    page-=6;
+                    setphoto();
                   });
           
               function setphoto(page){
@@ -126,7 +128,7 @@
                   }else if(photomax>album.length){
                     photomax=album.length;
                   }
-                  
+
                   GetPhoto(photomin,photomax);
                       console.log(photomax);
                    };
