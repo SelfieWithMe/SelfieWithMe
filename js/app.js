@@ -97,8 +97,8 @@
                               photomin=0;
                               photomax=6;
                             }else if(photomax>=photoArray.length){
-                              photomin=photomin-6;
                               photomax=photoArray.length;
+                              page=0;
                             }
 
                             console.log(photomin);
