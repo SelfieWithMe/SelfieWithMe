@@ -83,7 +83,8 @@
             }
 
             function Setalbum(){
-              var photomin,photomax,page=0,change;
+              var photomin,photomax;
+              var page=0,change;
                       
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
