@@ -192,7 +192,7 @@
                             photos.get('tips'),
                             photos.get('writer'),
                             photos.get('img').url(),
-                            photos.get('objectId')
+                            photos.get('objectId'),
                             photonum=i%6+1
                             )
                           }
