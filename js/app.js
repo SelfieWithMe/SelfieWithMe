@@ -258,8 +258,15 @@
 
               $(document).on('click','.likebox',function(e){
                  e.preventDefault();
+                 photoQuery.equalTo("objectId",$(this).attr('id'))
+                 photoQuery.find({
+                    success:function(result){
+                for(var i=0;i<result.length;i++){
                  photo.increment("value");
                  photo.save();
+                 $(this).text(photo.get('value'));
+               }
+             }
               });
-
+            });
             }
