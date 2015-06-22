@@ -89,7 +89,41 @@
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
-
+                      $(document).on('click','#hit',function(e){
+                         e.preventDefault();
+                      });
+                      $(document).on('click','#latest',function(e){
+                         e.preventDefault();
+                         query.descending("createdAt");
+                      });
+                      $(document).on('click','#natural',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","清新自然");
+                      });
+                      $(document).on('click','#cute',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","可愛甜美");
+                      });
+                      $(document).on('click','#city',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","成熟都會");                         
+                      });
+                      $(document).on('click','#weird',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","搞怪扮醜");
+                      });
+                      $(document).on('click','#festival',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","活動節慶");
+                      });
+                      $(document).on('click','#mood',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","心情小語");
+                      });
+                      $(document).on('click','#group',function(e){
+                         e.preventDefault();
+                         photoQuery.equalTo("style","團體群拍");
+                      });
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
