@@ -92,115 +92,106 @@
         </header>
 
         <!-- Portfolio Grid Section -->
-        <section id="portfolio" >
+        <section id="portfolio" class="success">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2>PICTURE</h2>
-                        <hr class="star-primary">
+                        <h2>美照分享</h2>
+                        <hr class="star-light">
                     </div>
                 </div>
                 <div class="picNav">
                     <ul class="nav nav-tabs">
-                          <li role="presentation" class="active"><a href="#">最新</a></li>
-                          <li role="presentation"><a href="#">心情</a></li>
-                          <li role="presentation"><a href="#">食物</a></li>
-                          <li role="presentation"><a href="#">旅遊</a></li>
-                          <li role="presentation"><a href="#">寵物</a></li>
-                          <li role="presentation"><a href="#">團體</a></li>
-                          <li role="presentation"><a href="#">其他</a></li>
+                          <li role="presentation" class="active"><a href="#" id="hit">熱門自拍</a></li>
+                          <li role="presentation"><a href="#" id="latest">最新自拍</a></li>
+                          <li role="presentation"><a href="#" id="natural">清新自然</a></li>
+                          <li role="presentation"><a href="#" id="cute">可愛甜美</a></li>
+                          <li role="presentation"><a href="#" id="city">成熟都會</a></li>
+                          <li role="presentation"><a href="#" id="weird">搞怪扮醜</a></li>
+                          <li role="presentation"><a href="#" id="festival">活動節慶</a></li>
+                          <li role="presentation"><a href="#" id="mood">心情小語</a></li>
+                          <li role="presentation"><a href="#" id="group">團體群拍</a></li>
+
                     </ul>
                 </div>
 
+
                 <div class="row">
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item" id="portfolio-item1">
                         <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/cabin.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item" id="portfolio-item2">
                         <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/cake.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/cake.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item" id="portfolio-item3">
                         <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/circus.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item"  id="portfolio-item4">
                         <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/game.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item"  id="portfolio-item5">
                         <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/safe.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
-                    <div class="col-sm-4 portfolio-item">
+                    <div class="col-sm-4 portfolio-item" id="portfolio-item6">
                         <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
                             <div class="caption">
                                 <div class="caption-content">
                                     <i class="fa fa-search-plus fa-3x"></i>
                                 </div>
                             </div>
-                            <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                            <img src="img/portfolio/submarine.png" class="img-responsive photo" alt="">
                         </a>
                     </div>
                 </div>
+
                 <div class="row text-center">
                     <div class="col-lg-12">
                         <ul class="pagination">
                             <li>
-                                <a href="#">&laquo;</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">1</a>
+                                <a id="lastpage" href="" style="font-size:2em;margin:4em">&laquo;</a>
                             </li>
                             <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">5</a>
-                            </li>
-                            <li>
-                                <a href="#">&raquo;</a>
+                                <a id="nextpage" href="" style="font-size:2em;margin:4em">&raquo;</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+
 
             </div>
         </section>
@@ -332,7 +323,84 @@
                 }
               });
             });
-        
+         function Setalbum(){
+              var photomin,photomax,page=0,change;
+                  function GetPhoto(){
+                    var Photo = Parse.Object.extend("Photo") ;
+                    var photo = new Photo();
+                    var photoQuery = new Parse.Query(Photo);
+                      photoQuery.equalTo("writer",Parse.User.current());
+
+                        photoQuery.find({
+                          success:function(photoArray){
+                            console.log(photoArray);
+                            if(photomin < 6){
+                              photomin=0;
+                              photomax=6;
+                            }else if(photomax>=photoArray.length){
+                              photomax=photoArray.length;
+                              page=0;
+                            }
+
+                            console.log(photomin);
+                            console.log(photomax);
+                        for(var i=photomin; i<photomax; i++){
+                            photos=photoArray[i];
+                            addphoto(
+                            photos.get('camera'),
+                            photos.get('style'),
+                            photos.get('tips'),
+                            photos.get('writer'),
+                            photos.get('img').url(),
+                            photonum=i%6+1
+                            )
+                          }
+                          removephoto();
+                        }
+                        });  
+                  };
+                   
+              $(document).on('click','#nextpage',function(e){
+                  e.preventDefault();
+                  page+=6;
+                  setphoto();
+                });
+
+              $(document).on('click','#lastpage',function(e){
+                  e.preventDefault();
+                    page-=6;
+                    setphoto();
+                  });
+          
+              function setphoto(){
+                  photomin=page;
+                  photomax=page+6;
+
+                  GetPhoto();
+                   };
+
+                function addphoto(camera,style,tips,writer,img,photonum){
+                  var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
+                 $(modalname).find('.writer').text(writer);
+                 $(modalname).find('#app').text(camera);
+                 $(modalname).find('#style').text(style);
+                 $(modalname).find('.tip').text(tips);
+                 $(modalname).find('.photo').attr("src",img);
+                 $(itemname).find('.photo').attr("src",img);
+                 $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
+               };
+               function removephoto(){
+                 if(photomax-photomin<6){
+                  var i=0,modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
+                  for(i=photomax-photomin+1;i<7;i++){
+                 $(modalname).find('.photo').atrr("src"," ");
+                 $(itemname).find('.photo').atrr("src"," ");
+                 console.log("hide");
+                  }
+                }
+               };
+              setphoto();
+            };
        </script>
            <!-- jQuery -->
         <script src="js/jquery.js"></script>
