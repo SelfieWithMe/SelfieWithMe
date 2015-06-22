@@ -132,13 +132,17 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-                            if(photomin < 6 && photoArray.length>6){
-                              photomin=0;
-                              photomax=6;
+                            if(photoArray.length<6 && photomax>6){
+                               photomin=0;
+                               photomax=photoArray.length;
+                               page=0; 
+                            }else if(photomin < 6){
+                                photomin=0;
+                                photomax=6;
                             }else if(photomax>=photoArray.length){
-                              photomax=photoArray.length;
-                              page=0;
-                            }
+                                photomax=photoArray.length;
+                                page=0;   
+                                }
 
                             console.log(photomin);
                             console.log(photomax);
