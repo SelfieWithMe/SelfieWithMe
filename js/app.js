@@ -220,7 +220,9 @@
                   GetPhoto();
                    };
 
-               function addphoto(camera,style,tips,writer,img,objectId,value,photonum){
+                setphoto();
+
+               function addphoto(camera,style,tips,writer,img,objectId,photonum){
                 var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
@@ -246,5 +248,4 @@
                   }
                 }
                };
-              setphoto();
             };
