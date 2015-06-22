@@ -23,6 +23,7 @@ var writer;
               var photosava = new Photo();
 
               photosava.set("writer",writer);
+              photosava.set("owner",Parse.User.current());
               photosava.set("camera",$('#formcamera').val());
               photosava.set("style",$('#formstyle').val());
               photosava.set("tips",$('#formtips').val()); 
