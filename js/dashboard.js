@@ -1,5 +1,5 @@
-$(document).ready(function(){      
-      var writer;
+var writer;
+    $(document).ready(function(){      
             if (!Parse.User.current()){
               alert("你尚未登入");
               window.location = "index.html";
