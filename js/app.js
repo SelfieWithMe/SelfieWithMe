@@ -230,7 +230,7 @@
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
                  $(modalname).find('.likebutton').html('<div class="fb-like" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
-                 $(itemname).show()
+                 $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
