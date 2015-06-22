@@ -95,7 +95,9 @@
                             console.log(photoArray);
                             if(photomin<6){
                               photomin=0;
+                              photomax=6;
                             }else if(photomax>=photoArray.length){
+                              photomin=photomin-6;
                               photomax=photoArray.length;
                             }
 
@@ -145,7 +147,17 @@
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                  console.log(photonum);
+                 if(photomax-photomin<6){
+                  for(var i=photonum+1;i<7;i++){
+                 $(modalname).find('.writer').hide();
+                 $(modalname).find('#app').hide();
+                 $(modalname).find('#style').hide();
+                 $(modalname).find('.tip').hide();
+                 $(modalname).find('.photo').hide();
+                 $(itemname).find('.photo').hide();
+                 $(itemname).find('.photo').hide();
+                  }
+                }
                }
                  
-                 setphoto(page); 
         };
