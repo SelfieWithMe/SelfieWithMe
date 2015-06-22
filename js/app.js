@@ -129,6 +129,7 @@
                             photonum=i%6+1
                             );
                           }
+                      console.log(page);
                    };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
@@ -139,7 +140,9 @@
                  $(modalname).children('.tip').text(tips);
                  $(modalname).children('.photo').attr("src",img);
                  $(itemname).children('.photo').attr("src",img);
-                 $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});}
+                 $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});
+                 console.log(photonum);
+               }
                  
                  GetPhoto();
                  setphoto(page); 
