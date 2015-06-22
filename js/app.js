@@ -131,7 +131,7 @@
                    };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
-                  var modalname='#portfolio-itemmodal'+photonum,itemname='#portfolio-item'+photonum;
+                  var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).children('.writer').text(writer);
                  $(modalname).children('#app').text(camera);
                  $(modalname).children('#style').text(style);
