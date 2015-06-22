@@ -251,7 +251,7 @@
             };
 
           for(var i=1;i<7;i++){
-          $(document).on('click','.button'+i,function(e){
+          $(document).on('click','#portfolioModal'+i+' .likebutton',function(e){
             e.preventDefault();
             value(this.id);
             console.log('click'+this.id);
