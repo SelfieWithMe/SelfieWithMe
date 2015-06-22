@@ -252,7 +252,7 @@
 
           $(document).on('click','.likebutton',function(e,obj){
             e.preventDefault();
-            value(obj.id));
+            value(obj.id);
             console.log('click'+obj.id);
           });
 
