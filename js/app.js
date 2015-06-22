@@ -132,7 +132,7 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-                            if(photomin < 6){
+                            if(photomin < 6 && photoArray.length>6){
                               photomin=0;
                               photomax=6;
                             }else if(photomax>=photoArray.length){
