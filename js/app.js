@@ -162,7 +162,7 @@
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
                      
-                     if(change!=null || change!="latest"){
+                     if(change!=(null || "latest")){
                       photoQuery.equalTo("style",change);
                      }else if(change=="latest"){
                       photoQuery.descending("createdAt");
