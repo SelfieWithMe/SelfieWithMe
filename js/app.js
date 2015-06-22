@@ -134,6 +134,7 @@
                       $(document).on('click','#natural',function(e){
                          e.preventDefault();
                          photoQuery.equalTo("style","清新自然");
+                         console.log("a");
                          GetPhoto();
                       });
                       $(document).on('click','#cute',function(e){
