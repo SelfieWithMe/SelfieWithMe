@@ -83,9 +83,8 @@
             }
 
             function Setalbum(){
-              var photomin,photomax;
-              var page=0,change;
-                      
+              var photomin=0,photomax=6,page=0,change;
+                      setphoto();
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
@@ -156,7 +155,7 @@
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
-                     
+
                      if(change!=(null || "latest")){
                       photoQuery.equalTo("style",change);
                      }else{
@@ -199,23 +198,16 @@
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
                   page+=6;
-                  setphoto();
+                  GetPhoto();
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
                     page-=6;
-                    setphoto();
+                    GetPhoto();
                   });
           
-              function setphoto(){
-                  photomin=page;
-                  photomax=page+6;
-
-                  GetPhoto();
-                   };
-
-                setphoto();
+              
 
                function addphoto(camera,style,tips,writer,img,objectId,photonum){
                 var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
@@ -224,9 +216,9 @@
                  $(modalname).find('#style').text(style);
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
-                 $(itemname).find('a').attr("href",objectId);
-                 $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/'+objectId+'" data-numposts="5"></div>');
-                 $(modalname).find('.likebutton').html('<div class="fb-like" data-href="http://selfiewithme.github.io/selfiewithme/'+objectId+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
+                 $(itemname).find('a').attr("href","#"+objectId);
+                 $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
+                 $(modalname).find('.likebutton').html('<div class="fb-like" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
                  $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
