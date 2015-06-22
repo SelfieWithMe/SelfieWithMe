@@ -174,7 +174,7 @@
                   photomin=page;
                   photomax=page+6;
 
-                  GetPhoto(photomin,photomax);
+                  GetPhoto();
                    };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
