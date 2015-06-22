@@ -85,6 +85,7 @@
             function Setalbum(){
               var photomin=0,photomax=6,page=0,change;
                       GetPhoto();
+
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
@@ -156,7 +157,7 @@
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
 
-                     if(change!=(null || "latest")){
+                     if(change){
                       photoQuery.equalTo("style",change);
                      }else{
                       photoQuery.descending("createdAt");
