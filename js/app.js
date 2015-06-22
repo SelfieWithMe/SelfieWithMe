@@ -83,7 +83,7 @@
             }
 
             function Setalbum(){
-              var photomin=0,photomax=6,page=0;
+              var photomin,photomax,page=0;
 
                   function GetPhoto(photomin,photomax){
                     var Photo = Parse.Object.extend("Photo") ;
@@ -128,9 +128,9 @@
                     setphoto();
                   });
           
-              function setphoto(page){
-                  photomin=photomin+page;
-                  photomax=photomax+page;
+              function setphoto(){
+                  photomin=page;
+                  photomax=page+6;
 
                   GetPhoto(photomin,photomax);
                    };
