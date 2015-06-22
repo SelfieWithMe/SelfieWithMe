@@ -83,7 +83,7 @@
             }
 
             function Setalbum(){
-              var album=[],photomin=0,photomax=photomin+6,page=0;
+              var album=[],photomin=0,photomax=photomin+6,page=0  ;
 
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
@@ -142,5 +142,5 @@
                  $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});}
                  
                  GetPhoto();
-                 setphoto(); 
+                 setphoto(page); 
         };
