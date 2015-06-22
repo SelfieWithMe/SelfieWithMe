@@ -232,7 +232,6 @@
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
-                 console.log(objectId);
                };
 
                function removephoto(){
