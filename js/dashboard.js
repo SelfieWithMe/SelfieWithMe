@@ -1,4 +1,5 @@
- var writer;
+$(document).ready(function(){      
+      var writer;
             if (!Parse.User.current()){
               alert("你尚未登入");
               window.location = "index.html";
@@ -12,6 +13,8 @@
                         writer=response['name'];
                                  });
                     }})})}
+              Setalbum();})
+
            
             $(document).on('submit','#photoForm',function(eventObject){
               eventObject.preventDefault();
@@ -49,10 +52,6 @@
                   alert(errorObject.message);
                 }
               });
-            });
-
-            $(document).ready(function(){
-                Setalbum();
             });
 
          function Setalbum(){
