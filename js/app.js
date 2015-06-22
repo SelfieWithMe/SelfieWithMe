@@ -46,8 +46,7 @@
                 else{
                     loginView();
                 }
-                GetPhoto();
-
+                Setalbum();
             });
 
             $(document).on('click','#loginBtn',function(e){
@@ -83,59 +82,64 @@
                loginView(); 
             }
 
-          var photomin=0,photomax=photomin+6,photolength;
+            function Setalbum(){
+              var album=[],photomin=0,photomax=photomin+6;
 
-            function GetPhoto(){
-              var Photo = Parse.Object.extend("Photo") ;
-              var photo = new Photo();
-              var photoQuery = new Parse.Query(Photo);
+                  function GetPhoto(){
+                    var Photo = Parse.Object.extend("Photo") ;
+                    var photo = new Photo();
+                    var photoQuery = new Parse.Query(Photo);
 
-                  photoQuery.find({
-                    success:function(photoArray){
-                      console.log(photoArray);
-                      photolength=photoArray.length;
+                        photoQuery.find({
+                          success:function(photoArray){
+                            console.log(photoArray);
 
-                      if(photomax>=photoArray.length){
-                        photomax=photoArray.length;
-                      }
+                            album=photoArray;
+                        });  
+                  };
+                };
 
-                      for(var i=photomin; i<photomax; i++){
-                        photos = photoArray[i];
-                        addphoto(
-                        photos.get('camera'),
-                        photos.get('style'),
-                        photos.get('tips'),
-                        photos.get('writer'),
-                        photos.get('img').url(),
-                        Photonum = i%6
-                        );
-                      }
-                    }
-                  });  
-            };
-
-            function addphoto(camera,style,tips,writer,img,Photonum){
-           
-             $('.portfolio-modal .writer').eq(Photonum).text(writer);
-             $('.portfolio-modal #app').eq(Photonum).text(camera);
-             $('.portfolio-modal #style').eq(Photonum).text(style);
-             $('.portfolio-modal .tip').eq(Photonum).text(tips);
-             $('.portfolio-modal .photo').eq(Photonum).attr("src",img);
-             $('.portfolio-item .photo').eq(Photonum).attr("src",img);
-             $('.portfolio-item .photo').eq(Photonum).css({'max-height':'360px','max-width':'360px'});
-            };
-            
               $(document).on('click','#nextpage',function(e){
-                e.preventDefault();
-                if(photomin<=photolength-6)
-                  photomin+=6;
-                  GetPhoto();
-              });
-
-            $(document).on('click','#lastpage',function(e){
-                e.preventDefault();
-                  if(photomin>=6){
-                      photomin-=6;
-                      GetPhoto();
-                    }
+                  e.preventDefault();
+                  setalbum(6);
                 });
+
+              $(document).on('click','#lastpage',function(e){
+                  e.preventDefault();
+                    setalbum(-6);
+                  });
+          
+              function setphoto(page){
+                  photomin=photomin+page;
+                  photomax=photomin+6;
+
+                  if(photomin<6){
+                    photomin=0;
+                  }else if(photomax>album.length){
+                    photomax=album.length;
+                  }
+
+                for(var i=photomin; i<photomax; i++){
+                            photos = album[i];
+                            addphoto(
+                            photos.get('camera'),
+                            photos.get('style'),
+                            photos.get('tips'),
+                            photos.get('writer'),
+                            photos.get('img').url(),
+                            photonum=i%6+1
+                            );
+                          }
+                        }
+
+                function addphoto(camera,style,tips,writer,img,photonum){
+                  var modalname='.portfolio-modal'+photonum,itemname='.portfolio-item'+photonum;
+                 $(modalname).children('.writer').text(writer);
+                 $(modalname).children('#app').text(camera);
+                 $(modalname).children('#style').text(style);
+                 $(modalname).children('.tip').text(tips);
+                 $(modalname).children('.photo').attr("src",img);
+                 $(itemname).children('.photo').attr("src",img);
+                 $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});}
+
+        };
