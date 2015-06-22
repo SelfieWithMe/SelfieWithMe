@@ -150,8 +150,8 @@
                }
                function removephoto(){
                  if(photomax-photomin<6){
-                  for(var i=photomax-photomin+1;i<7;i++){
-                  var modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
+                  var i=0,modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
+                  for(i=photomax-photomin+1;i<7;i++){
                  $(modalname).find('.photo').atrr("src"," ");
                  $(itemname).find('.photo').atrr("src"," ");
                  console.log("hide");
