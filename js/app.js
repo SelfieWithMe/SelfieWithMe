@@ -93,8 +93,8 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-
                             album=photoArray;
+                          }
                         });  
                   };
                 };
