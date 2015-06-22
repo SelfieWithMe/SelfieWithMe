@@ -151,6 +151,7 @@
                function removephoto(){
                  if(photomax-photomin<6){
                   for(var i=photomax-photomin+1;i<7;i++){
+                  var modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
                  $(modalname).find('.photo').atrr("src","");
                  $(itemname).find('.photo').atrr("src","");
                  console.log("hide");
