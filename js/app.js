@@ -230,7 +230,7 @@
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
-                 $(modalname).find('.comment').html('<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" id="'+objectId+'" aria-hidden="true"></span></button>');
+                 $(modalname).find('.comment').html('<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" id="'+objectId+'" aria-hidden="true">'+value+'</span></button>');
                  $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
@@ -256,12 +256,9 @@
               var photo = new Photo();
               var photoQuery = new Parse.Query(Photo);
 
-              var photovalue=photoQuery.get($(this).attr('id'),value);
-              $(this).text(photovalue);
-
               $(document).on('click','.likebox',function(e){
                  e.preventDefault();
-                 photo.increment("score");
+                 photo.increment("value");
                  photo.save();
               });
 
