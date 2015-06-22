@@ -204,7 +204,7 @@
                  $(modalname).find('#style').text(style);
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
-                 $(itemname).find('.photo').show();
+                 $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
@@ -213,7 +213,7 @@
                   var i=0,itemname;
                   for(i=photomax-photomin+1;i<7;i++){
                     itemname='#portfolio-item'+i;
-                 $(itemname).find('.photo').hide();
+                 $(itemname).hide();
                  console.log(i+"hide");
                  console.log(itemname);
                   }
