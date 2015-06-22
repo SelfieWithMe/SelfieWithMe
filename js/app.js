@@ -248,17 +248,17 @@
                 }
                };
               setphoto();
-              value();
             };
 
-            function value(){
+            $(document).on('click','.likebutton',function(e){
+            e.preventDefault();
+            value($(this).attr('id'));
+          });
+            function value(id){
               var Photo = Parse.Object.extend("Photo") ;
               var photo = new Photo();
               var photoQuery = new Parse.Query(Photo);
-
-              $(document).on('click','.likebutton',function(e){
-                 e.preventDefault();
-                 photoQuery.equalTo("objectId",$(this).attr('id'))
+                 photoQuery.equalTo("objectId",id)
                  photoQuery.find({
                     success:function(result){
                 for(var i=0;i<result.length;i++){
@@ -267,7 +267,6 @@
                  $(this).text(photo.get('value'));
                  console.log('add');
                }
-             }
+              }
               });
-            });
-            }
+            };
