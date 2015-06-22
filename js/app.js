@@ -83,7 +83,7 @@
             }
 
             function Setalbum(){
-              var album=[],photomin=0,photomax=photomin+6,page=0;
+              var photomin=0,photomax=photomin+6,page=0;
 
                   function GetPhoto(photomin,photomax){
                     var Photo = Parse.Object.extend("Photo") ;
@@ -96,13 +96,15 @@
                             var length=photoArray.length;
                             if(photomin<6){
                               photomin=0;
-                            }else if(photomax>=length){
-                             photomax=length;
-                           }
+                            }
+                            
                             console.log(photomax);
                             console.log(length);
 
                         for(var i=photomin; i<photomax; i++){
+                            if(i==photoArray.length-1){
+                              break;
+                            }
                             photos=photoArray[i];
                             addphoto(
                             photos.get('camera'),
