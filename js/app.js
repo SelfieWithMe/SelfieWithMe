@@ -82,6 +82,8 @@
                loginView(); 
             }
 
+            function Setalbum(){
+              var photomin,photomax,page=0,change;
                       $(document).on('click','#hit',function(e){
                           e.preventDefault();
                           console.log("APPLE");
@@ -92,12 +94,8 @@
                       });
                       $(document).on('click','#natural',function(e){
                         e.preventDefault();
-                        var Photo = Parse.Object.extend("Photo") ;
-                        var photo = new Photo();
-                        var photoQuery = new Parse.Query(Photo);
-                        Setalbum();
-                        photoQuery.equalTo("style","清新自然");
-
+                        change="清新自然";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                       $(document).on('click','#cute',function(e){
@@ -124,16 +122,13 @@
                         e.preventDefault();
                         console.log("APPLE");
                       });
-            
-
-            function Setalbum(){
-              var photomin,photomax,page=0;
-
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
-                     
+                     if(change!=null){
+                      photoQuery.equalTo("style",change);
+                     }
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
