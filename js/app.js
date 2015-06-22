@@ -97,16 +97,15 @@
                           }
                         });  
                   };
-              GetPhoto();
               
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
-                  Setalbum(6);
+                  setphoto(6);
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
-                    Setalbum(-6);
+                    setphoto(-6);
                   });
           
               function setphoto(page){
@@ -141,5 +140,7 @@
                  $(modalname).children('.photo').attr("src",img);
                  $(itemname).children('.photo').attr("src",img);
                  $(itemname).children('.photo').css({'max-height':'360px','max-width':'360px'});}
-
+                 
+                 GetPhoto();
+                 setphoto(); 
         };
