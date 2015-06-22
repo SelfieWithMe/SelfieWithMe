@@ -192,6 +192,7 @@
                             photos.get('tips'),
                             photos.get('writer'),
                             photos.get('img').url(),
+                            photos.get('objectId')
                             photonum=i%6+1
                             )
                           }
@@ -219,7 +220,7 @@
                   GetPhoto();
                    };
 
-                function addphoto(camera,style,tips,writer,img,photonum){
+                function addphoto(camera,style,tips,writer,img,objectId,photonum){
                   var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
@@ -227,9 +228,12 @@
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).show();
+                 $(itemname).find('.a').attr("href","#"+objectId);
+                 $('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>')appendTo($(modalname '.starbox'));
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
+
                function removephoto(){
                  if(photomax-photomin<6){
                   var i=0,itemname;
@@ -245,5 +249,16 @@
             };
 
             function value(){
-              
+              var Photo = Parse.Object.extend("Photo") ;
+              var photo = new Photo();
+              var photoQuery = new Parse.Query(Photo);
+
+
+              $('.starbox').starbox({
+                    average: 0.5,
+                    changeable: 'once',
+                    autoUpdateAverage: true,
+                    ghosting: true
+                });
+
             }
