@@ -193,6 +193,7 @@
                             photos.get('writer'),
                             photos.get('img').url(),
                             photos.id,
+                            photos.get('value'),
                             photonum=i%6+1
                             )
                           }
@@ -220,16 +221,17 @@
                   GetPhoto();
                    };
 
-                function addphoto(camera,style,tips,writer,img,objectId,photonum){
+                function addphoto(camera,style,tips,writer,img,objectId,value,photonum){
                   var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
                  $(modalname).find('#style').text(style);
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
-                 $(itemname).show();
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
+                 $(modalname).find('.comment').html('<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" id="'+objectId+'" aria-hidden="true"></span></button>');
+                 $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
@@ -246,6 +248,7 @@
                 }
                };
               setphoto();
+              value();
             };
 
             function value(){
@@ -253,12 +256,13 @@
               var photo = new Photo();
               var photoQuery = new Parse.Query(Photo);
 
+              photoQuery.get($(this).attr('id'),value);
+              $(this).text(photovalue);
 
-              $('.starbox').starbox({
-                    average: 0.5,
-                    changeable: 'once',
-                    autoUpdateAverage: true,
-                    ghosting: true
-                });
+              $(document).on('click','.likebox',function(e){
+                 e.preventDefault();
+                 photo.increment("score");
+                 photo.save();
+              });
 
             }
