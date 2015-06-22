@@ -243,3 +243,7 @@
                };
               setphoto();
             };
+
+            function value(){
+              
+            }
