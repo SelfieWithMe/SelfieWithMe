@@ -19,28 +19,7 @@
       </head>
 
 
-    <body id="page-top" class="index">
-        <div id="fb-root"></div>
-            <script>
-            window.fbAsyncInit = function() {
-             Parse.FacebookUtils.init({
-                  appId      : '376624765869068',
-                  status     : true,  // check Facebook Login status
-                  cookie     : true,  // enable cookies to allow Parse to access the session
-                  xfbml      : true, 
-                  version    : 'v2.3'
-                });
-              };
-
-            (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=376624765869068";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-            </script>   
-
+    <body id="page-top" class="index">  
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
@@ -461,6 +440,16 @@
             </div>
         </footer>
     <script>
+            var writer;
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                uid = response.authResponse.userID;
+                    accessToken = response.authResponse.accessToken;
+                    FB.api('/me', function (response) {
+                    writer=response['name'];
+                                });
+                }});
+
             if (!Parse.User.current()){
               alert("你尚未登入");
               window.location = "index.html";
@@ -473,15 +462,7 @@
               var Photo = Parse.Object.extend("Photo") ;
               var photosava = new Photo();
 
-              FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                uid = response.authResponse.userID;
-                    accessToken = response.authResponse.accessToken;
-                    FB.api('/me', function (response) {
-                    photosava.set("writer",response['name']);
-                                });
-                }});
-              photosava.set("writer",response['name']);
+              photosava.set("writer",writer);
               photosava.set("camera",$('#formcamera').val());
               photosava.set("style",$('#formstyle').val());
               photosava.set("tips",$('#formtips').val());
@@ -615,6 +596,26 @@
         <!-- Custom Theme JavaScript -->
         <script src="js/main.js"></script>
 
+    <div id="fb-root"></div>
+            <script>
+            window.fbAsyncInit = function() {
+             Parse.FacebookUtils.init({
+                  appId      : '376624765869068',
+                  status     : true,  // check Facebook Login status
+                  cookie     : true,  // enable cookies to allow Parse to access the session
+                  xfbml      : true, 
+                  version    : 'v2.3'
+                });
+              };
+
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.3&appId=376624765869068";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script> 
     </body>
 
 </html>
