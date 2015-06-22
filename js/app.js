@@ -113,7 +113,9 @@
                             photos.get('img').url(),
                             photonum=i%6+1
                             )
-                          }}
+                          }
+                          removephoto();
+                        }
                         });  
                   };
               
@@ -145,19 +147,12 @@
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
-                 console.log(photonum);
-                 console.log(photomax);
-                 console.log(photomin);
-
+               }
+               function removephoto(){
                  if(photomax-photomin<6){
                   for(var i=photomax-photomin+1;i<7;i++){
-                 $(modalname).find('.writer').hide();
-                 $(modalname).find('#app').hide();
-                 $(modalname).find('#style').hide();
-                 $(modalname).find('.tip').hide();
-                 $(modalname).find('.photo').hide();
-                 $(itemname).find('.photo').hide();
-                 $(itemname).find('.photo').hide();
+                 $(modalname).find('.photo').atrr("src","");
+                 $(itemname).find('.photo').atrr("src","");
                  console.log("hide");
                   }
                 }
