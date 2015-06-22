@@ -249,9 +249,9 @@
                };
               setphoto();
             };
-            
+
           for(var i=1;i<7;i++){
-          $(document).on('click','button1',function(e){
+          $(document).on('click','.button'+i,function(e){
             e.preventDefault();
             value(this.id);
             console.log('click'+this.id);
