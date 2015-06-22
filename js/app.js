@@ -230,8 +230,8 @@
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
-                 $(modalname).find('.likebutton').html('<button type="button" class="btn btn-default btn-lg button'+photonum+'"><span class="glyphicon glyphicon-star" id="'+objectId+'" aria-hidden="true">'+value+'</span></button>');
-                 $(itemname).show();
+                 $(modalname).find('.likebutton').html('<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" id="'+objectId+'" aria-hidden="true">'+value+'</span></button>');
+                 $(itemname).show()
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
@@ -255,6 +255,7 @@
             e.preventDefault();
             value(this.id);
             console.log('click'+this.id);
+            console.log(i);
           });};
 
             function value(id){
