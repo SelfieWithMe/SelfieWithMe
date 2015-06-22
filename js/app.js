@@ -256,7 +256,7 @@
               var photo = new Photo();
               var photoQuery = new Parse.Query(Photo);
 
-              $(document).on('click','.likebox',function(e){
+              $(document).on('click','.likebutton',function(e){
                  e.preventDefault();
                  photoQuery.equalTo("objectId",$(this).attr('id'))
                  photoQuery.find({
