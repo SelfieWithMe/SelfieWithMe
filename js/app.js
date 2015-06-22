@@ -192,10 +192,9 @@
                             photos.get('tips'),
                             photos.get('writer'),
                             photos.get('img').url(),
-                            photos.get('objectId'),
+                            photos.id,
                             photonum=i%6+1
                             )
-                            console.log(objectid);
                           }
                           removephoto();
                         }
