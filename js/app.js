@@ -93,6 +93,13 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
+
+                            if(photomin<6){
+                              photomin=0;
+                            }else if(photomax>photoArray.length){
+                             photomax=photoArray.length;
+                           }
+
                         for(var i=photomin; i<photomax; i++){
                             photos=photoArray[i];
                             addphoto(
@@ -122,12 +129,6 @@
               function setphoto(page){
                   photomin=photomin+page;
                   photomax=photomin+6;
-
-                  if(photomin<6){
-                    photomin=0;
-                  }else if(photomax>album.length){
-                    photomax=album.length;
-                  }
 
                   GetPhoto(photomin,photomax);
                       console.log(photomax);
