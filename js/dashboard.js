@@ -25,9 +25,7 @@ var writer;
               photosava.set("writer",writer);
               photosava.set("camera",$('#formcamera').val());
               photosava.set("style",$('#formstyle').val());
-              photosava.set("tips",$('#formtips').val());
-              photosava.set("value","0");
-
+              photosava.set("tips",$('#formtips').val()); 
 
               if ($("#fileInput")[0].files.length > 0) {
                var file = $("#fileInput")[0].files[0];
