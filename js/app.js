@@ -250,10 +250,12 @@
               setphoto();
             };
 
-            $(document).on('click','.likebutton',function(e){
+          $(document).on('click','.likebutton',function(e){
             e.preventDefault();
             value($(this).attr('id'));
+            console.log('click'+$(this).attr('id'));
           });
+
             function value(id){
               var Photo = Parse.Object.extend("Photo") ;
               var photo = new Photo();
