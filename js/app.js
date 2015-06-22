@@ -95,14 +95,14 @@
                             console.log(photoArray);
                             if(photomin<6){
                               photomin=0;
+                            }else if(photomax>=photoArray.length){
+                              photomax=photoArray.length;
                             }
 
+                            console.log(photomin);
                             console.log(photomax);
 
                         for(var i=photomin; i<photomax; i++){
-                            if(i==photoArray.length-1){
-                              break;
-                            }
                             photos=photoArray[i];
                             addphoto(
                             photos.get('camera'),
