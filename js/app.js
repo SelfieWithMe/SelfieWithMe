@@ -194,6 +194,7 @@
                   for(i=photomax-photomin+1;i<7;i++){
                  $(itemname).find('.photo').hide();
                  console.log(i+"hide");
+                 console.log(itemname);
                   }
                 }
                };
