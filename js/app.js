@@ -90,6 +90,7 @@
                         });
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
+                         change="latest";
                          console.log("APPLE");
                       });
                       $(document).on('click','#natural',function(e){
@@ -100,34 +101,48 @@
                       });
                       $(document).on('click','#cute',function(e){
                        e.preventDefault();
+                       change="可愛甜美";
+                       GetPhoto();
                        console.log("APPLE");
                       });
                       $(document).on('click','#city',function(e){
                         e.preventDefault();
+                        change="成熟都會";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                       $(document).on('click','#weird',function(e){
                         e.preventDefault();
+                        change="搞怪扮醜";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                       $(document).on('click','#festival',function(e){
                         e.preventDefault();
+                        change="活動節慶";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                       $(document).on('click','#mood',function(e){
                         e.preventDefault();
+                        change="心情小語";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                       $(document).on('click','#group',function(e){
                         e.preventDefault();
+                        change="團體群拍";
+                        GetPhoto();
                         console.log("APPLE");
                       });
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
-                     if(change!=null){
+                     if(change!=null || change!="latest"){
                       photoQuery.equalTo("style",change);
+                     }else if(change==="latest"){
+                      photoQuery.descending("createdAt");
                      }
                         photoQuery.find({
                           success:function(photoArray){
