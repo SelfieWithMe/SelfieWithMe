@@ -100,12 +100,12 @@
 
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
-                  setalbum(6);
+                  Setalbum(6);
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
-                    setalbum(-6);
+                    Setalbum(-6);
                   });
           
               function setphoto(page){
