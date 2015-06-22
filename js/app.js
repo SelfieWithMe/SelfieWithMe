@@ -85,14 +85,15 @@
             function Setalbum(){
               var photomin,photomax,page=0;
 
-                  function GetPhoto(photomin,photomax){
+                  function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
 
                         photoQuery.find({
-
-                          if(photomin < 6){
+                          success:function(photoArray){
+                            console.log(photoArray);
+                            if(photomin < 6){
                               photomin=0;
                               photomax=6;
                             }else if(photomax>=photoArray.length){
@@ -102,10 +103,6 @@
 
                             console.log(photomin);
                             console.log(photomax);
-
-                          success:function(photoArray){
-                            console.log(photoArray);
-
                         for(var i=photomin; i<photomax; i++){
                             photos=photoArray[i];
                             addphoto(
