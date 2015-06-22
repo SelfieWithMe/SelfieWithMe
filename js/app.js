@@ -92,6 +92,12 @@
                       });
                       $(document).on('click','#natural',function(e){
                         e.preventDefault();
+                        var Photo = Parse.Object.extend("Photo") ;
+                        var photo = new Photo();
+                        var photoQuery = new Parse.Query(Photo);
+                        Setalbum();
+                        photoQuery.equalTo("style","清新自然");
+
                         console.log("APPLE");
                       });
                       $(document).on('click','#cute',function(e){
