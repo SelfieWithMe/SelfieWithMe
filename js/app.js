@@ -193,7 +193,6 @@
                             photos.get('writer'),
                             photos.get('img').url(),
                             photos.id,
-                            photos.get('value'),
                             photonum=i%6+1
                             )
                           }
@@ -231,7 +230,7 @@
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(modalname).find('.comment').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
-             //    $(modalname).find('.likebutton').html('<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button>');
+                 $(modalname).find('.likebutton').html('<div class="fb-like" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
                  $(itemname).show()
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
@@ -251,28 +250,3 @@
                };
               setphoto();
             };
-/*
-          for(var i=1;i<7;i++){
-          $(document).on('click','#portfolioModal'+i+' .likebutton',function(e){
-            e.preventDefault();
-            value(this.id);
-            console.log('click'+this.id);
-          });};
-
-            function value(id){
-              var Photo = Parse.Object.extend("Photo") ;
-              var photo = new Photo();
-              var photoQuery = new Parse.Query(Photo);
-                 photoQuery.equalTo("objectId",id)
-                 photoQuery.find({
-                    success:function(result){
-                for(var i=0;i<result.length;i++){
-                 photo.increment("value");
-                 photo.save();
-                 $(this).text(photo.get('value'));
-                 console.log('add');
-               }
-              }
-              });
-            };
-*/
