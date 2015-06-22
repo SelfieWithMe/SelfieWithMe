@@ -83,9 +83,9 @@
             }
 
             function Setalbum(){
-              var album=[],photomin=0,photomax=photomin+6,page=0  ;
+              var album=[],photomin=0,photomax=photomin+6,page=0;
 
-                  function GetPhoto(){
+                  function GetPhoto(photomin,photomax){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
@@ -93,8 +93,16 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-                            album=photoArray;
-                          }
+                        for(var i=photomin; i<photomax; i++){
+                            addphoto(
+                            photos.get('camera'),
+                            photos.get('style'),
+                            photos.get('tips'),
+                            photos.get('writer'),
+                            photos.get('img').url(),
+                            photonum=i%6+1
+                            )
+                          }}
                         });  
                   };
               
@@ -117,18 +125,7 @@
                   }else if(photomax>album.length){
                     photomax=album.length;
                   }
-
-                for(var i=photomin; i<photomax; i++){
-                            photos = album[i];
-                            addphoto(
-                            photos.get('camera'),
-                            photos.get('style'),
-                            photos.get('tips'),
-                            photos.get('writer'),
-                            photos.get('img').url(),
-                            photonum=i%6+1
-                            );
-                          }
+                  GetPhoto(photomin,photomax);
                       console.log(page);
                    };
 
