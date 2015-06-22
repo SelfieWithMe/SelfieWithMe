@@ -97,7 +97,8 @@
                           }
                         });  
                   };
-
+              GetPhoto();
+              
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
                   Setalbum(6);
