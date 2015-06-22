@@ -256,7 +256,7 @@
               var photo = new Photo();
               var photoQuery = new Parse.Query(Photo);
 
-              photovalue=photoQuery.get($(this).attr('id'),value);
+              var photovalue=photoQuery.get($(this).attr('id'),value);
               $(this).text(photovalue);
 
               $(document).on('click','.likebox',function(e){
