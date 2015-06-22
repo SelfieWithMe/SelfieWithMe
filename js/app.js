@@ -94,7 +94,7 @@
                          change="latest";
                          GetPhoto();
                          $('.picNav li').removeClass("active");
-                         $('#natural').parents().addclass("active");
+                         $('#natural').parents().addClass("active");
                          console.log("APPLE");
                       });
                       $(document).on('click','#natural',function(e){
@@ -103,7 +103,7 @@
                         GetPhoto();
                         console.log("APPLE");
                         $('.picNav li').removeClass("active");
-                        $('#natural').parents().addclass("active");
+                        $('#natural').parents().addClass("active");
 
                       });
                       $(document).on('click','#cute',function(e){
@@ -111,7 +111,7 @@
                        change="可愛甜美";
                        GetPhoto();
                        $('.picNav li').removeClass("active");
-                       $('#cute').parents().addclass("active");
+                       $('#cute').parents().addClass("active");
                        console.log("APPLE");
                       });
                       $(document).on('click','#city',function(e){
@@ -119,7 +119,7 @@
                         change="成熟都會";
                         GetPhoto();
                         $('.picNav li').removeClass("active");
-                        $('#city').parents().addclass("active");
+                        $('#city').parents().addClass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#weird',function(e){
@@ -127,7 +127,7 @@
                         change="搞怪扮醜";
                         GetPhoto();
                         $('.picNav li').removeClass("active");
-                        $('#weird').parents().addclass("active");
+                        $('#weird').parents().addClass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#festival',function(e){
@@ -135,7 +135,7 @@
                         change="活動節慶";
                         GetPhoto();
                         $('.picNav li').removeClass("active");
-                        $('#festival').parents().addclass("active");
+                        $('#festival').parents().addClass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#mood',function(e){
@@ -143,7 +143,7 @@
                         change="心情小語";
                         GetPhoto();
                         $('.picNav li').removeClass("active");
-                        $('#mood').parents().addclass("active");
+                        $('#mood').parents().addClass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#group',function(e){
@@ -151,10 +151,10 @@
                         change="團體群拍";
                         GetPhoto();
                         $('.picNav li').removeClass("active");
-                        $('#group').parents().addclass("active");
+                        $('#group').parents().addClass("active");
                         console.log("APPLE");
                       });
-                      
+
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
