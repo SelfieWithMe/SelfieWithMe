@@ -97,7 +97,6 @@
                           }
                         });  
                   };
-                };
 
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
@@ -130,7 +129,7 @@
                             photonum=i%6+1
                             );
                           }
-                        }
+                   };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
                   var modalname='.portfolio-modal'+photonum,itemname='.portfolio-item'+photonum;
