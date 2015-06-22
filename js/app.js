@@ -100,7 +100,7 @@
                              photomax=photoArray.length;
                            }
                             console.log(photomax);
-                            
+                            console.log(photoArray.length);
                         for(var i=photomin; i<photomax; i++){
                             photos=photoArray[i];
                             addphoto(
