@@ -147,8 +147,9 @@
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                  console.log(photonum);
+
                  if(photomax-photomin<6){
-                  for(var i=photonum+1;i<7;i++){
+                  for(var i=photomax-photomin+1;i<7;i++){
                  $(modalname).find('.writer').hide();
                  $(modalname).find('#app').hide();
                  $(modalname).find('#style').hide();
@@ -156,8 +157,9 @@
                  $(modalname).find('.photo').hide();
                  $(itemname).find('.photo').hide();
                  $(itemname).find('.photo').hide();
+                 console.log("hide");
                   }
                 }
                }
-                 
+              setphoto();   
         };
