@@ -83,7 +83,7 @@
             }
 
             function Setalbum(){
-              var album=[],photomin=0,photomax=photomin+6;
+              var album=[],photomin=0,photomax=photomin+6,page=0;
 
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
