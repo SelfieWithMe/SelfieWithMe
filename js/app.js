@@ -84,7 +84,7 @@
 
             function Setalbum(){
               var photomin=0,photomax=6,page=0,change;
-                      setphoto();
+                      GetPhoto();
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
