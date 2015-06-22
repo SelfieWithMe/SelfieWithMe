@@ -250,10 +250,10 @@
               setphoto();
             };
 
-          $(document).on('click','.likebutton',function(e,obj){
+          $(document).on('click','.likebutton',function(){
             e.preventDefault();
-            value(obj.id);
-            console.log('click'+obj.id);
+            value(this.id);
+            console.log('click'+this.id);
           });
 
             function value(id){
