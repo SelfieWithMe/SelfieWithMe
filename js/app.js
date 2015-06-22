@@ -265,6 +265,7 @@
                  photo.increment("value");
                  photo.save();
                  $(this).text(photo.get('value'));
+                 console.log('add');
                }
              }
               });
