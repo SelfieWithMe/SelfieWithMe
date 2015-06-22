@@ -117,7 +117,7 @@
                           removephoto();
                         }
                         });  
-                  }
+                  };
 
                       $(document).on('click','#hit',function(e){
                          e.preventDefault();
@@ -201,7 +201,7 @@
                          photoQuery.equalTo("style","團體群拍");
                          GetPhoto();
                       });
-              };
+            
 
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
@@ -231,7 +231,7 @@
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
-               }
+               };
                function removephoto(){
                  if(photomax-photomin<6){
                   var i=0,modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
@@ -241,7 +241,7 @@
                  console.log("hide");
                   }
                 }
-               }
+               };
               setphoto();
               changestyle();   
-        };
+            };
