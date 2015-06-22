@@ -117,52 +117,86 @@
                           removephoto();
                         }
                         });  
-                  };
+                  }
 
-              function changestyle(){
-                    var Photo = Parse.Object.extend("Photo") ;
-                    var photo = new Photo();
-                    var photoQuery = new Parse.Query(Photo);
                       $(document).on('click','#hit',function(e){
                          e.preventDefault();
                       });
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
+                         var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
                          photoQuery.descending("createdAt");
                          GetPhoto();
                       });
                       $(document).on('click','#natural',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","清新自然");
                          console.log("a");
                          GetPhoto();
                       });
                       $(document).on('click','#cute',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","可愛甜美");
                          GetPhoto();
                       });
                       $(document).on('click','#city',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","成熟都會");
                          GetPhoto();                         
                       });
                       $(document).on('click','#weird',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","搞怪扮醜");
                          GetPhoto();
                       });
                       $(document).on('click','#festival',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","活動節慶");
                          GetPhoto();
                       });
                       $(document).on('click','#mood',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","心情小語");
                          GetPhoto();
                       });
                       $(document).on('click','#group',function(e){
+                        var Photo = Parse.Object.extend("Photo") ;
+                         var photo = new Photo();
+                         var photoQuery = new Parse.Query(Photo);
+                         photoQuery.descending("createdAt");
+                         GetPhoto();
                          e.preventDefault();
                          photoQuery.equalTo("style","團體群拍");
                          GetPhoto();
