@@ -126,8 +126,9 @@
                   }else if(photomax>album.length){
                     photomax=album.length;
                   }
+                  
                   GetPhoto(photomin,photomax);
-                      console.log(page);
+                      console.log(photomax);
                    };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
