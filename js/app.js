@@ -84,13 +84,7 @@
 
             function Setalbum(){
               var photomin,photomax,page=0,change;
-                      $(document).on('click','#hit',function(e){
-                          e.preventDefault();
-                          GetPhoto();
-                         $('.picNav li').removeClass("active");
-                         $('#hit').parents().addClass("active");
-                          console.log("APPLE");
-                        });
+                      
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
@@ -164,7 +158,7 @@
                      
                      if(change!=(null || "latest")){
                       photoQuery.equalTo("style",change);
-                     }else if(change=="latest"){
+                     }else{
                       photoQuery.descending("createdAt");
                      }
 
