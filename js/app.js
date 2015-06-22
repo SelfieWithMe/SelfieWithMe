@@ -86,11 +86,15 @@
               var photomin,photomax,page=0,change;
                       $(document).on('click','#hit',function(e){
                           e.preventDefault();
+                          GetPhoto();
                           console.log("APPLE");
                         });
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
+                         GetPhoto();
+                         $('.picNav li').removeClass("active");
+                         $('#natural').parents().addclass("active");
                          console.log("APPLE");
                       });
                       $(document).on('click','#natural',function(e){
@@ -98,43 +102,59 @@
                         change="清新自然";
                         GetPhoto();
                         console.log("APPLE");
+                        $('.picNav li').removeClass("active");
+                        $('#natural').parents().addclass("active");
+
                       });
                       $(document).on('click','#cute',function(e){
                        e.preventDefault();
                        change="可愛甜美";
                        GetPhoto();
+                       $('.picNav li').removeClass("active");
+                       $('#cute').parents().addclass("active");
                        console.log("APPLE");
                       });
                       $(document).on('click','#city',function(e){
                         e.preventDefault();
                         change="成熟都會";
                         GetPhoto();
+                        $('.picNav li').removeClass("active");
+                        $('#city').parents().addclass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#weird',function(e){
                         e.preventDefault();
                         change="搞怪扮醜";
                         GetPhoto();
+                        $('.picNav li').removeClass("active");
+                        $('#weird').parents().addclass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#festival',function(e){
                         e.preventDefault();
                         change="活動節慶";
                         GetPhoto();
+                        $('.picNav li').removeClass("active");
+                        $('#festival').parents().addclass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#mood',function(e){
                         e.preventDefault();
                         change="心情小語";
                         GetPhoto();
+                        $('.picNav li').removeClass("active");
+                        $('#mood').parents().addclass("active");
                         console.log("APPLE");
                       });
                       $(document).on('click','#group',function(e){
                         e.preventDefault();
                         change="團體群拍";
                         GetPhoto();
+                        $('.picNav li').removeClass("active");
+                        $('#group').parents().addclass("active");
                         console.log("APPLE");
                       });
+                      
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
