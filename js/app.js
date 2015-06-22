@@ -207,5 +207,6 @@
                   }
                 }
                }
-              setphoto();   
+              setphoto();
+              changestyle();   
         };
