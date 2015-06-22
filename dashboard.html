@@ -442,22 +442,19 @@
     <script>
             var writer;
 
-            function FBuser(){
-            FB.getLoginStatus(function(response) {
-                if (response.status === 'connected') {
-                uid = response.authResponse.userID;
-                    accessToken = response.authResponse.accessToken;
-                    FB.api('/me', function (response) {
-                    writer=response['name'];
-                                });
-                }});
-            }   
-
             if (!Parse.User.current()){
               alert("你尚未登入");
               window.location = "index.html";
-            }
-
+            }else if(current){
+                var a = setTimeout(function(){
+                  FB.getLoginStatus(function(response) {
+                    if (response.status === 'connected') {
+                        uid = response.authResponse.userID;
+                        accessToken = response.authResponse.accessToken;
+                        FB.api('/me', function (response) {
+                        writer=response['name'];
+                                 });
+                    }}}}
            
             $(document).on('submit','#photoForm',function(eventObject){
               eventObject.preventDefault();
