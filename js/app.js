@@ -191,8 +191,8 @@
                  if(photomax-photomin<6){
                   var i=0,modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
                   for(i=photomax-photomin+1;i<7;i++){
-                 $(modalname).find('.photo').atrr("src"," ");
-                 $(itemname).find('.photo').atrr("src"," ");
+                 $(modalname).find('.photo').attr("src"," ");
+                 $(itemname).find('.photo').attr("src"," ");
                  console.log("hide");
                   }
                 }
