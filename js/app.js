@@ -99,7 +99,8 @@
                             }else if(photomax>photoArray.length){
                              photomax=photoArray.length;
                            }
-
+                            console.log(photomax);
+                            
                         for(var i=photomin; i<photomax; i++){
                             photos=photoArray[i];
                             addphoto(
@@ -131,7 +132,6 @@
                   photomax=photomin+6;
 
                   GetPhoto(photomin,photomax);
-                      console.log(photomax);
                    };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
