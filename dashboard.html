@@ -377,6 +377,7 @@
                  $(modalname).find('#style').text(style);
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
+                 $(itemname).find('.photo').show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
                };
@@ -384,9 +385,8 @@
                  if(photomax-photomin<6){
                   var i=0,modalname='#portfolioModal'+i,itemname='#portfolio-item'+i;
                   for(i=photomax-photomin+1;i<7;i++){
-                 $(modalname).find('.photo').attr("src"," ");
-                 $(itemname).find('.photo').attr("src"," ");
-                 console.log("hide");
+                 $(itemname).find('.photo').hide();
+                 console.log("hide"+i);
                   }
                 }
                };
