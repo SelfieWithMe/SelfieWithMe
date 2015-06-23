@@ -252,11 +252,6 @@ section.success a.active {
     transition: all ease .5s;
 }
 
-#portfolio .portfolio-item .portfolio-link .caption img {
-    margin: auto;
-}
-
-
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
     opacity: 1;
@@ -471,4 +466,8 @@ footer .footer-below {
 #lastpage_DB,#nextpage_DB{
     color: #333232;
     background-color: #ffffff;
+}
+
+img {
+    margin: auto;
 }
