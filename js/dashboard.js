@@ -55,7 +55,7 @@ var writer;
             });
 
          function Setalbum(){
-              var photomin,photomax,page=0;
+              var photomin=0,photomax=6,page=0;
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
@@ -66,16 +66,25 @@ var writer;
                           success:function(photoArray){
                             console.log(photoArray);
 
-                            if(photoArray.length<6){
+                            photomin+=page;
+                            photomax+=page;
+                            
+                            if(photoArray.length<=6){
                                photomin=0;
-                               photomax=photoArray.length;
-                            }else if(photomin < 6){
+                               photomax=photoArray.length;}
+
+                           if(photomin < 0){
                                 photomin=0;
-                                photomax=6;
+                                photomax=6;                             
                             }else if(photomax>=photoArray.length){
                                 photomax=photoArray.length;
-                                page=0;   
-                                }
+                                if(photomin>=photomax){
+                                  photomin-=page;
+                                }   
+                                page=0;
+                            }else if(photomax%6!=0){
+                              photomax=photomin+6;
+                            }
         
                             console.log(photomin);
                             console.log(photomax);
@@ -98,20 +107,14 @@ var writer;
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
                   page+=6;
-                  setphoto();
+                  Getphoto();
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
                     page-=6;
-                    setphoto();
+                    Getphoto();
                   });
-          
-              function setphoto(){
-                  photomin=page;
-                  photomax=page+6;
-                  GetPhoto();
-                   };
 
                 function addphoto(camera,style,tips,writer,img,photonum){
                   var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;

@@ -92,13 +92,11 @@
                          GetPhoto();
                          $('.picNav li').removeClass("active");
                          $('#latest').parents().addClass("active");
-                         console.log("APPLE");
                       });
                       $(document).on('click','#natural',function(e){
                         e.preventDefault();
                         change="清新自然";
                         GetPhoto();
-                        console.log("APPLE");
                         $('.picNav li').removeClass("active");
                         $('#natural').parents().addClass("active");
 
@@ -109,7 +107,6 @@
                        GetPhoto();
                        $('.picNav li').removeClass("active");
                        $('#cute').parents().addClass("active");
-                       console.log("APPLE");
                       });
                       $(document).on('click','#city',function(e){
                         e.preventDefault();
@@ -117,7 +114,6 @@
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#city').parents().addClass("active");
-                        console.log("APPLE");
                       });
                       $(document).on('click','#weird',function(e){
                         e.preventDefault();
@@ -125,7 +121,6 @@
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#weird').parents().addClass("active");
-                        console.log("APPLE");
                       });
                       $(document).on('click','#festival',function(e){
                         e.preventDefault();
@@ -133,7 +128,6 @@
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#festival').parents().addClass("active");
-                        console.log("APPLE");
                       });
                       $(document).on('click','#mood',function(e){
                         e.preventDefault();
@@ -141,7 +135,6 @@
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#mood').parents().addClass("active");
-                        console.log("APPLE");
                       });
                       $(document).on('click','#group',function(e){
                         e.preventDefault();
@@ -149,7 +142,6 @@
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#group').parents().addClass("active");
-                        console.log("APPLE");
                       });
 
                   function GetPhoto(){
@@ -157,7 +149,7 @@
                     var photo = new Photo();
                     var photoQuery = new Parse.Query(Photo);
 
-                     if(change){
+                     if(change && change!="latest")){
                       photoQuery.equalTo("style",change);
                      }else{
                       photoQuery.descending("createdAt");
@@ -166,17 +158,27 @@
                         photoQuery.find({
                           success:function(photoArray){
                             console.log(photoArray);
-                            if(photoArray.length<6){
+
+                            photomin+=page;
+                            photomax+=page;
+                            
+                            if(photoArray.length<=6){
                                photomin=0;
-                               photomax=photoArray.length;
-                            }else if(photomin < 6){
+                               photomax=photoArray.length;}
+
+                           if(photomin < 0){
                                 photomin=0;
-                                photomax=6;
+                                photomax=6;                             
                             }else if(photomax>=photoArray.length){
                                 photomax=photoArray.length;
-                                page=0;   
-                                }
-
+                                if(photomin>=photomax){
+                                  photomin-=page;
+                                }   
+                                page=0;
+                            }else if(photomax%6!=0){
+                              photomax=photomin+6;
+                            }
+                            
                             console.log(photomin);
                             console.log(photomax);
                         for(var i=photomin; i<photomax; i++){
@@ -231,8 +233,6 @@
                   for(i=photomax-photomin+1;i<7;i++){
                     itemname='#portfolio-item'+i;
                  $(itemname).hide();
-                 console.log(i+"hide");
-                 console.log(itemname);
                   }
                 }
                };
