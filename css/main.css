@@ -229,7 +229,7 @@ section.success a.active {
 }
 
 #about .portfolio-item{
-    margin: 5x;
+    border:5px
 }
 
 #portfolio .portfolio-item {
