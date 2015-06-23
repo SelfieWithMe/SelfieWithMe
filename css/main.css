@@ -468,3 +468,6 @@ footer .footer-below {
     background-color: #ffffff;
 }
 
+.img-responsive .photo {
+    margin: auto;
+}
