@@ -58,20 +58,20 @@ hr.star-primary:after {
 }
 
 hr.star-light {
-    border-color: #333232;
+    border-color: #fff;
 }
 
 hr.star-light:after {
-    color: #333232;
+    color: #fff;
     background-color: #b2d234;
 }
 
 hr.star-primary {
-    border-color: #333232;
+    border-color: #2c3e50;
 }
 
 hr.star-primary:after {
-    color: #333232;
+    color: #2c3e50;
     background-color: #fff;
 }
 
@@ -82,7 +82,7 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #333232;
+    background: #b2d234;
 }
 
 header .container {
@@ -463,7 +463,7 @@ footer .footer-below {
 }
 
 #nextpage_DB{
-    color: #2c3e50;
+    color: #b2d234;
     background-color: #ffffff;
 
 }
