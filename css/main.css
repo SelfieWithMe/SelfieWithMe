@@ -78,11 +78,11 @@ hr.star-primary:after {
 }
 
 .star-primary-tip{
-    background-color: #939597;
+    border-color: #fff;
 }
 
 .star-primary-tip:after {
-    color: #333232;
+    color: #fff;
     background-color: #939597;
 }
 
