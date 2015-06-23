@@ -57,20 +57,12 @@ hr.star-primary:after {
     font-size: 2em;
 }
 
-hr.star-light {
-    border-color: #fff;
-}
 
-hr.star-light:after {
-    color: #333232;
-    background-color: #b2d234;
-}
-
-hr.star-primary {
+hr.star-light,hr.star-primary {
     border-color: #2c3e50;
 }
 
-hr.star-primary:after {
+hr.star-light:after,hr.star-primary:after {
     color: #333232;
     background-color: #fff;
 }
@@ -81,7 +73,7 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
+    color: #333232;
     background: #b2d234;
 }
 
