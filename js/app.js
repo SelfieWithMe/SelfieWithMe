@@ -85,10 +85,15 @@
             function Setalbum(){
               var photomin=0,photomax=6,page=0,change;
                       GetPhoto();
+                      
+                      function setnum(){
+                        photomin=0,photomax=6,page=0;
+                      }
 
                       $(document).on('click','#latest',function(e){
                          e.preventDefault();
                          change="latest";
+                         setnum();
                          GetPhoto();
                          $('.picNav li').removeClass("active");
                          $('#latest').parents().addClass("active");
@@ -96,6 +101,7 @@
                       $(document).on('click','#natural',function(e){
                         e.preventDefault();
                         change="清新自然";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#natural').parents().addClass("active");
@@ -104,6 +110,7 @@
                       $(document).on('click','#cute',function(e){
                        e.preventDefault();
                        change="可愛甜美";
+                       setnum();
                        GetPhoto();
                        $('.picNav li').removeClass("active");
                        $('#cute').parents().addClass("active");
@@ -111,6 +118,7 @@
                       $(document).on('click','#city',function(e){
                         e.preventDefault();
                         change="成熟都會";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#city').parents().addClass("active");
@@ -118,6 +126,7 @@
                       $(document).on('click','#weird',function(e){
                         e.preventDefault();
                         change="搞怪扮醜";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#weird').parents().addClass("active");
@@ -125,6 +134,7 @@
                       $(document).on('click','#festival',function(e){
                         e.preventDefault();
                         change="活動節慶";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#festival').parents().addClass("active");
@@ -132,6 +142,7 @@
                       $(document).on('click','#mood',function(e){
                         e.preventDefault();
                         change="心情小語";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#mood').parents().addClass("active");
@@ -139,6 +150,7 @@
                       $(document).on('click','#group',function(e){
                         e.preventDefault();
                         change="團體群拍";
+                        setnum();
                         GetPhoto();
                         $('.picNav li').removeClass("active");
                         $('#group').parents().addClass("active");
