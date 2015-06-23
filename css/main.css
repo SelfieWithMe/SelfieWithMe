@@ -62,7 +62,7 @@ hr.star-light {
 }
 
 hr.star-light:after {
-    color: #fff;
+    color: #333232;
     background-color: #b2d234;
 }
 
@@ -71,7 +71,7 @@ hr.star-primary {
 }
 
 hr.star-primary:after {
-    color: #2c3e50;
+    color: #333232;
     background-color: #fff;
 }
 
@@ -457,13 +457,7 @@ footer .footer-below {
     width:128px;
 }
 
-#lastpage_DB{
+#lastpage_DB,#nextpage_DB{
     color: #2c3e50;
     background-color: #ffffff;
-}
-
-#nextpage_DB{
-    color: #b2d234;
-    background-color: #ffffff;
-
 }
