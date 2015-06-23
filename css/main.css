@@ -228,6 +228,12 @@ section.success a.active {
     padding-bottom: 30px;
 }
 
+
+#about .portfolio-item{
+    right: 0;
+    margin: 0 0 15px;
+}
+
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
