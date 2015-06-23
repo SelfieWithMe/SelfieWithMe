@@ -37,7 +37,8 @@ h6 {
 }
 
 hr.star-light,
-hr.star-primary {
+hr.star-primary,
+.star-primary-tip {
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
@@ -47,7 +48,8 @@ hr.star-primary {
 }
 
 hr.star-light:after,
-hr.star-primary:after {
+hr.star-primary:after,
+.star-primary-tip:after {
     content: "\f030";
     display: inline-block;
     position: relative;
@@ -73,6 +75,10 @@ hr.star-primary {
 hr.star-primary:after {
     color: #333232;
     background-color: #fff;
+}
+
+.star-primary-tip{
+    background-color: #939597;
 }
 
 .img-centered {
