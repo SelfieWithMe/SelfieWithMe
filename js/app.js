@@ -212,14 +212,14 @@
 
                function addphoto(camera,style,tips,writer,img,objectId,photonum){
                 var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
+                 $(modalname).find('.fb-comments').attr('data-href','http://selfiewithme.github.io/selfiewithme/#'+objectId);
+                 $(modalname).find('.fb-like').attr('data-href','http://selfiewithme.github.io/selfiewithme/#'+objectId);
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
                  $(modalname).find('#style').text(style);
                  $(modalname).find('.tip').text(tips);
                  $(modalname).find('.photo').attr("src",img);
                  $(itemname).find('a').attr("href","#"+objectId);
-                 $(modalname).find('.fb-comments').attr('data-href','http://selfiewithme.github.io/selfiewithme/#'+objectId);
-                 $(modalname).find('.fb-like').attr('data-href','http://selfiewithme.github.io/selfiewithme/#'+objectId);
                  $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
                  $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
