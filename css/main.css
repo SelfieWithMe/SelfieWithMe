@@ -456,3 +456,14 @@ footer .footer-below {
     height:128px;
     width:128px;
 }
+
+#lastpage{
+    color: #b2d234;
+    background-color: #ffffff;
+}
+
+#nextpage_DB{
+    color: #b2d234;
+    background-color: #ffffff;
+
+}
