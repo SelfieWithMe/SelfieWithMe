@@ -205,6 +205,7 @@
                             photonum=i%6+1
                             )
                           }
+                          FB.XFBML.parse();
                           removephoto();
                         }
                         });  
@@ -228,7 +229,6 @@
                 var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
                  $(modalname).find('.fb-comments').html('<div class="fb-comments" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-numposts="5"></div>');
                  $(modalname).find('.fb-like').html('<div class="fb-like" data-href="http://selfiewithme.github.io/selfiewithme/#'+objectId+'" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>');
-                  FB.XFBML.parse();
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);
                  $(modalname).find('#style').text(style);
