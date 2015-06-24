@@ -109,7 +109,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace,"微軟正黑體";
+  font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
   font-size: 1em;
 }
 button,
@@ -1085,7 +1085,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif,"微軟正黑體";
+  font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
   font-size: 15px;
   line-height: 1.42857143;
   color: #333232;
@@ -1187,7 +1187,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif,"微軟正黑體";
+  font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
   font-weight: 400;
   line-height: 1.1;
   color: inherit;
@@ -5843,7 +5843,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif,"微軟正黑體";
+  font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
   font-size: 13px;
   font-weight: normal;
   line-height: 1.4;
@@ -5950,7 +5950,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif,"微軟正黑體";
+  font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
   font-size: 15px;
   font-weight: normal;
   line-height: 1.42857143;
