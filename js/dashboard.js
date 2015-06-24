@@ -77,6 +77,7 @@ var writer;
 
          function Setalbum(){
               var photomin=0,photomax=6,page=0;
+                  GetPhoto();
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
@@ -128,16 +129,14 @@ var writer;
               $(document).on('click','#nextpage',function(e){
                   e.preventDefault();
                   page+=6;
-                  Getphoto();
+                  GetPhoto();
                 });
 
               $(document).on('click','#lastpage',function(e){
                   e.preventDefault();
                     page-=6;
-                    Getphoto();
+                    GetPhoto();
                   });
-              
-                Getphoto();
 
                 function addphoto(camera,style,tips,writer,img,photonum){
                   var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
