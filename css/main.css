@@ -280,7 +280,8 @@ section.success a.active {
 }
 
 
-#portfolio .portfolio-item .portfolio-link .caption:hover {
+#portfolio .portfolio-item .portfolio-link .caption:hover,
+#portfolio .portfolio-item .portfolio-link #dashboard-img:hover {
     opacity: 1;
 }
 
