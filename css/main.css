@@ -33,7 +33,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
+    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體","cwTeXHei";
     font-weight: 700;
 }
 
@@ -110,7 +110,7 @@ header img {
 header .intro-text .name {
     display: block;
     text-transform: uppercase;
-    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
+    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體","cwTeXHei";
     font-size: 2em;
     font-weight: 700;
 }
@@ -118,7 +118,7 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
-    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
+    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體","cwTeXHei";
 }
 
 @media(min-width:768px) {
@@ -162,7 +162,7 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
+    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體","cwTeXHei";
     font-weight: 700;
 }
 
@@ -334,7 +334,7 @@ section.success a.active {
 
 footer {
     color: #fff;
-    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體";
+    font-family:"Ubuntu","Roboto Condensed",sans-serif,"微軟正黑體","cwTeXHei";
 }
 
 footer h3 {
@@ -501,8 +501,5 @@ footer .footer-below {
     background-color: #939597;
 }
 
-/*@media(min-width:767px){}
-    #shareimg{
-        height:330px;
-    }
-}*/
+
+
