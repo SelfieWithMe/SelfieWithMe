@@ -12,6 +12,14 @@ var writer;
                         FB.api('/me', function (response) {
                         writer=response['name'];
                                  });
+                        FB.api('/me/picture?type=large', function (response) {
+                             $('#fbImgView').html("<img src="+response.data.url+" crossorigin=\"anonymous\" id=dashboardImg />");          
+                        });
+                     
+                        FB.api('/me', function (response) {
+                              console.log(response);
+                              $('#fbImgView').append("<h1>HELLO , "+" "+response['first_name']+"</h1>");
+                        });
                     }})},3000)}
               Setalbum();});
 
