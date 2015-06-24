@@ -227,7 +227,7 @@
 
                function addphoto(camera,style,tips,writer,img,objectId,photonum){
                 var modalname='#portfolioModal'+photonum,itemname='#portfolio-item'+photonum;
-                 $(modalname).find('.comment').html('<div class="fb-comments" data-href="'+img+'" data-width="100%" data-numposts="5"></div>');
+                 $(modalname).find('.comment').html('<div class="fb-comments" data-href="'+img+'" data-width="100%" data-numposts="5" style="height:30vh;width:100%"></div>');
                  $(modalname).find('.likebutton').html('<div class="fb-like" data-href="'+img+'" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>');
                  $(modalname).find('.writer').text(writer);
                  $(modalname).find('#app').text(camera);

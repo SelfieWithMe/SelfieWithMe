@@ -159,5 +159,4 @@ var writer;
                   }
                 }
                };
-              setphoto();
             };
