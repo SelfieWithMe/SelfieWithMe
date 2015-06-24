@@ -458,8 +458,8 @@ footer .footer-below {
 
 #dashboardImg{
     border-radius: 50%;
-    width:250px;
-    height:250px;
+    width:auto;
+    height:256px;
 }
 }
 
