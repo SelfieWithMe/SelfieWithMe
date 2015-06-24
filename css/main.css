@@ -268,7 +268,7 @@ section.success a.active {
     transition: all ease .5s;
 }
 
-#dashboard-img {
+.dashboard-img {
     background: rgba(255,255,255,.9);
 }
 
