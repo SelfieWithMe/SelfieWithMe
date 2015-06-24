@@ -237,7 +237,7 @@
                  $(itemname).find('a').attr("href","#"+objectId);
                  $(itemname).show();
                  $(itemname).find('.photo').attr("src",img);
-                 $(itemname).find('.photo').css({'max-height':'360px','max-width':'360px'});
+                 $(itemname).find('.photo').css({'max-height':'300px','max-width':'300px'});
                };
 
                function removephoto(){
