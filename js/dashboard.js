@@ -13,7 +13,7 @@ var writer;
                         writer=response['name'];
                                  });
                         FB.api('/me/picture?type=large', function (response) {
-                             $('#fbImgView').html("<img src="+response.data.url+" crossorigin=\"anonymous\" id=dashboardImg />");          
+                             $('#dashboardImg').attr("src",response.data.url );          
                         });
                      
                         FB.api('/me', function (response) {
