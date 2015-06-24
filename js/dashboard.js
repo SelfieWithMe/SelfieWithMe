@@ -77,6 +77,7 @@ var writer;
 
          function Setalbum(){
               var photomin=0,photomax=6,page=0;
+              Getphoto();
                   function GetPhoto(){
                     var Photo = Parse.Object.extend("Photo") ;
                     var photo = new Photo();
