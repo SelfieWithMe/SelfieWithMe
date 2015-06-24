@@ -18,7 +18,7 @@ var writer;
                      
                         FB.api('/me', function (response) {
                               console.log(response);
-                              $('#dashHi').text("<h1>HELLO , "+" "+response['first_name']+"</h1>");
+                              $('#dashHi').text("HELLO , "+" "+response['first_name']);
                         });
                     }})},3000)}
               Setalbum();});
