@@ -23,6 +23,19 @@ var writer;
                     }})},3000)}
               Setalbum();});
 
+            $(document).on('click','#logoutBtn',function(e){
+                e.preventDefault();
+                logout();
+                alert("登出成功");
+                window.location = 'index.html' ;
+            });
+
+            function logout(){
+               Parse.User.logOut();
+               FB.logout(function(response) {
+                 // user is now logged out
+               });
+            }
            
             $(document).on('submit','#photoForm',function(eventObject){
               eventObject.preventDefault();
