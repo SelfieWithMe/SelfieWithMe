@@ -1344,7 +1344,7 @@ mark,
   color: #333232;
 }
 a.text-primary:hover {
-  color: #1a242f;
+  color: #161616;
 }
 .text-success {
   color: #ffffff;
@@ -1375,7 +1375,7 @@ a.text-danger:hover {
   background-color: #333232;
 }
 a.bg-primary:hover {
-  background-color: #1a242f;
+  background-color: #161616;
 }
 .bg-success {
   background-color: #b2d234;
@@ -3096,7 +3096,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #1a242f;
+  background-color: #161616;
   border-color: #161f29;
 }
 .btn-primary:active,
